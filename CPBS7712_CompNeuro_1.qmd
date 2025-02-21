@@ -3,11 +3,12 @@ title: "Computational Neuroscience"
 subtitle: "Neural data - action potentials and voltage and using the time domain, fourier domain"
 author: "Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 27 2025"
 format: revealjs
+auto-animate: true
 theme: solarized
 jupyter: python3
 ---
 
-# Outline
+# Outline {auto-animate=true}
 :::{.incremental}
 - Neurons + Neural Systems
   - what are we computing?
@@ -15,43 +16,50 @@ jupyter: python3
 - Frequency Domain Analysis
 :::
 
-# Neurons + Neural Systems 
- A brief tour of neurobiology, emphasis on crossing scales 
+
+# Neurons + Neural Systems  {auto-animate=true}
+
+ A brief tour of neurobiology, emphasis on crossing scales (spatial and temporal)
 
 
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=445 top=300 width=300}
 
----
-![](./media/Brodmann_areas_3D_.png){.absolute width=200}
+![](./media/minnie_w_back_V3.png){.absolute left=350 top=250 width=200}
 
-![](./media/minnie_w_back_V3.png){.absolute width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 left=50}
 
-![](./media/purple_martinotti_7_.png){.absolute width=300 left=350}
+![](./media/synapse.png){.absolute width=200 left=0 top=-50} 
 
-![](./media/synapse.png){.absolute width=200 top=500} 
+![](./media/kv31.png){.absolute width=200 left=800}
 
-ion channel
+![](./media/arm_muscles.png){.absolute width=200 left=800} 
 
-![](./media/arm_muscles.png){.absolute width=200 top=500} 
-
-![](./media/triMouseDLC.gif){.absolute width=200 left=750} 
+![](./media/triMouseDLC.gif){.absolute width=200 left=1000} 
 
 ::: aside
 images modified from microns-explorer.org; Gilmer et al., 2024, deeplabcut.github.io
 :::
 
+## Voltage
+
+Single neurons have some properties of electronic circuits
+
+
+## Action Potentials
+active electronics - electrical behavior that takes energy
+
+## Action Potentials
+Hodgkin-Huxley
+
+
 ## Neurons
 ### anatomy
+Ramon y Cajal
 ![](./media/ramonycajal1.jpg){.absolute width=300}
 ![](./media/ramonycajal2.jpeg){.absolute width=300 left=350}
 
-
-## Voltage
-
-- Eat eggs
-- Drink coffee
-
-## Action Potentials
-- spikes
+Connectivity matrices
 
 ## Connectivity
 - neurons
