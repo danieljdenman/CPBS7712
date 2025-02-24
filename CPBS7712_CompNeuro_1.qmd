@@ -11,9 +11,9 @@ jupyter: python3
 # Outline {auto-animate=true}
 :::{.incremental}
 - Neurons + Neural Systems
-  - what are we computing?
-- Time Domain Analysis
-- Frequency Domain Analysis
+  - what are we computing about?
+- Time Domain Methods
+- Frequency Domain Methods
 :::
 
 
@@ -23,49 +23,149 @@ jupyter: python3
 
 
 ##  {auto-animate=true}
-![](./media/Brodmann_areas_3D_.png){.absolute left=445 top=300 width=300}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
 
-![](./media/minnie_w_back_V3.png){.absolute left=350 top=250 width=200}
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=110 top=390 width=400}
 
-![](./media/purple_martinotti_7_.png){.absolute width=300 left=50}
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=500 top=-50 left=-50}
 
-![](./media/synapse.png){.absolute width=200 left=0 top=-50} 
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
+![](./media/synapse.png){.absolute width=300 left=50 top=-100} 
 
-![](./media/kv31.png){.absolute width=200 left=800}
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
+![](./media/synapse.png){.absolute width=200 left=50 top=0} 
+![](./media/kv31.png){.absolute width=200 top=-200 left=0}
 
-![](./media/arm_muscles.png){.absolute width=200 left=800} 
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
+![](./media/synapse.png){.absolute width=200 left=50 top=0} 
+![](./media/kv31.png){.absolute width=200 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute width=400 top=120 left=650} 
 
-![](./media/triMouseDLC.gif){.absolute width=200 left=1000} 
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
+![](./media/synapse.png){.absolute width=200 left=50 top=0} 
+![](./media/kv31.png){.absolute width=200 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute width=200 top=220 left=750} 
+![](./media/triMouseDLC.gif){.absolute width=350 top=-100 left=700} 
+
+##  {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
+![](./media/synapse.png){.absolute width=200 left=50 top=0} 
+![](./media/kv31.png){.absolute width=200 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute width=200 top=220 left=750} 
+![](./media/triMouseDLC.gif){.absolute width=200 left=900} 
+
 
 ::: aside
 images modified from microns-explorer.org; Gilmer et al., 2024, deeplabcut.github.io
 :::
 
-## Voltage
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=500 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=-200 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=-200 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=-200} 
+![](./media/kv31.png){.absolute width=100 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute width=100 top=-200 left=625} 
+![](./media/triMouseDLC.gif){.absolute width=100 top=-200 left=750} 
 
-Single neurons have some properties of electronic circuits
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=475 top=-200 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=350 top=-200 width=100}
+![](./media/synapse.png){.absolute left=225 top=-200 width=100} 
+![](./media/kv31.png){.absolute left=0 top=-200 width=200}
+![](./media/arm_muscles.png){.absolute left=725 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=850 top=-200 width=100}  
+
+## Voltage {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=475 top=-200 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=350 top=-200 width=100}
+![](./media/synapse.png){.absolute left=225 top=-200 width=100} 
+![](./media/kv31.png){.absolute left=0 top=-200 width=200}
+![](./media/arm_muscles.png){.absolute left=725 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=850 top=-200 width=100}  
+Membrane proteins give neurons some properties of electronic circuits. 
+- Same computational approaches as many areas of bioscience. 
+- Alphafold
 
 
-## Action Potentials
-active electronics - electrical behavior that takes energy
+## Voltage {auto-animate=true auto-animate-easing="ease-in-out"}
+### Action Potentials
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=550 top=-200 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=300 top=-200 width=200}
+![](./media/synapse.png){.absolute left=225 top=-200 width=100} 
+![](./media/kv31.png){.absolute left=0 top=-200 width=200}
+![](./media/arm_muscles.png){.absolute left=825 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-200 width=100}  
 
-## Action Potentials
 Hodgkin-Huxley
 
 
-## Neurons
+## Neurons {auto-animate=true auto-animate-easing="ease-in-out"}
 ### anatomy
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=-200 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=-200 width=100}
+![](./media/synapse.png){.absolute left=125 top=-200 width=250} 
+![](./media/kv31.png){.absolute left=0 top=-200 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-200 width=100}  
 Ramon y Cajal
 ![](./media/ramonycajal1.jpg){.absolute width=300}
 ![](./media/ramonycajal2.jpeg){.absolute width=300 left=350}
 
-Connectivity matrices
-
-## Connectivity
+## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-200 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=-200 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=-200 width=100}
+![](./media/synapse.png){.absolute left=125 top=-200 width=250} 
+![](./media/kv31.png){.absolute left=0 top=-200 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-200 width=100}  
 - neurons
 - areas
 
-## Dynamics
+## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=-200 width=200}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=-200 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=-200 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=-200} 
+![](./media/kv31.png){.absolute width=100 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute left=825 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-200 width=100}  
+- neurons
+- areas
+
+## Dynamics {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=580 top=-200 width=175}
+![](./media/minnie_w_back_V3.png){.absolute left=350 top=-200 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=-200 left=225}
+![](./media/synapse.png){.absolute width=100 left=125 top=-200} 
+![](./media/kv31.png){.absolute width=100 top=-200 left=0}
+![](./media/arm_muscles.png){.absolute left=825 top=-200 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-200 width=100}  
+-population methods: 2photon, ephys
 
 ## Behavior
 - muscles
@@ -74,15 +174,7 @@ Connectivity matrices
 # Time domain
 Analysis
 
-## Dinner
 
-- Eat spaghetti
-- Drink wine
-
-## Going to sleep
-
-- Get in bed
-- Count sheep
 
 ## interactive 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
