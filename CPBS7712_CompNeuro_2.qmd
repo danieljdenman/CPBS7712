@@ -6,26 +6,64 @@ format: revealjs
 jupyter: python3
 ---
 
-# Neurons + Neural Systems 
-Biology
+# {auto-animate=true}
+### theoretical models _and_ data-driven analyses {.center}
+![](./media/ConceptMap.png){.nostretch fig-align="center" width=580}
 
-## Neurons
+# Outline {auto-animate=true}
+:::{.incremental}
+- Systems Neuroscience Experiments
+  - what are we computing about?
+- Dimensionality reduction
+- Hidden Markov Models
+:::
+
+# Systems Neuroscience Experiments
+
+::: {.column width="40%"}
+Neuropixels
+:::
+
+::: {.column width="60%"}
+2-p
+:::
+
+
+# Systems Neuroscience Experiments
+
+::: {.column width="40%"}
+Neuropixels - signal extraction, clustering/template matching
+:::
+
+::: {.column width="60%"}
+image registration, signal extraction
+:::
+
+# Dimensionality Reduction
+## Vector sum
 
 - Turn off alarm :wave:
 - Get out of bed
 
-## Voltage
+# Dimensionality Reduction
+## PCA
 
 - Eat eggs
 - Drink coffee
 
-## Action Potentials
-- spikes
+# Dimensionality Reduction
+## jPCA
 
-## Behavior
-- outputs
+-churchland
 
-# Time domain
+# Dimensionality Reduction
+## CEBRA, Sanechi
+
+- deep learning
+
+# Hidden Dynamics
+## Markov Models
+
 Analysis
 
 ## Dinner
@@ -58,9 +96,3 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
-
-# Fourier domain
-Analysis
-
-## Fourier
-- history
