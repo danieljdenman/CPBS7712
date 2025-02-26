@@ -21,7 +21,7 @@ neuromatch.io
 - Neurons + Neural Systems
   - what are we computing about?
 - Time Domain Methods
-- Frequency Domain Methods
+- Frequency Domain Methods 
 :::
 
 
@@ -125,16 +125,15 @@ Membrane proteins (and lipid properties) give neurons some features of electroni
 ![](./media/kv31.png){.absolute left=0 top=-100 width=200}
 ![](./media/arm_muscles.png){.absolute left=725 top=-100 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=850 top=-100 width=100}  
-![](./media/cellmembranecircuit.jpg){.absolute left=0 top=400 width=300}  
-![](./media/alphafold2_.jpg){.absolute left=320 top=400 width=700}  
+![](./media/cellmembranecircuit.jpg){.absolute left=500 top=50 width=300}  
+
 
 ### Voltage 
-
-
 #### Membrane proteins (and lipid properties) give neurons some features of electronic circuits. 
+Understanding these proteins (and lipids) shares computational approaches as many areas of bioscience - namely, protein structure. 
 
-- Same computational approaches as many areas of bioscience. 
-- Alphafold
+- Alphafold, large protein models
+![](./media/alphafold2_.jpg){.absolute left=50 top=600 width=900}  
 
 ::: footer
 Jumper et al 2021 DOI: 10.1038/s41586-021-03819-2
@@ -151,9 +150,15 @@ Jumper et al 2021 DOI: 10.1038/s41586-021-03819-2
 ![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
 
 Hodgkin-Huxley experiments
+![](./media/hh_exp.jpg){.absolute left=230 top=250 width=600}  
 
-## Voltage {auto-animate=true auto-animate-easing="ease-in-out"}
-### Action Potentials
+::: footer
+Hodgkin and Huxley, 1953
+:::
+
+
+## _ {auto-animate=true auto-animate-easing="ease-in-out"}
+### Voltage : Action potentials
 ![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
 ![](./media/minnie_w_back_V3.png){.absolute left=550 top=-100 width=100}
 ![](./media/purple_martinotti_7_.png){.absolute left=300 top=-100 width=200}
@@ -162,8 +167,75 @@ Hodgkin-Huxley experiments
 ![](./media/arm_muscles.png){.absolute left=825 top=-100 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
 
-Hodgkin-Huxley. equivalent circuit and equation
+Hodgkin-Huxley equivalent circuit and equation
+![](./media/hh_diagram.gif){.absolute left=230 top=250 width=600}  
+![](./media/hh_equation.svg){.absolute left=230 top=750 width=600}  
 
+::: footer
+Hodgkin and Huxley, 1953; wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model
+:::
+
+
+## {fullscreen=false}
+```{python}
+#| echo: true
+#| output-location: column
+#| code-overflow: wrap
+#| code-fold: true
+
+import sys
+import os
+if not os.path.exists("./src/pyhh/__init__.py"):
+    raise Exception("script must be run in project root folder")
+sys.path.append("./src")
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pyhh
+
+# customize a neuron model if desired
+model = pyhh.HHModel()
+model.gNa = 100  # typically 120
+model.gK = 5  # typically 36
+model.EK = -35  # typically -12
+
+# customize a stimulus waveform
+stim = np.zeros(20000)
+stim[7000:13000] = 50  # add a square pulse
+
+# simulate the model cell using the custom waveform
+sim = pyhh.Simulation(model)
+sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
+
+# plot the results with MatPlotLib
+
+ax1 = plt.subplot(1,1,1)
+ax1.plot(sim.times, sim.Vm - 70, color='b')
+ax1.set_ylabel("Potential (mV)")
+ax1.set_title("Hodgkin-Huxley Spiking Neuron Model")
+
+# ax2 = plt.subplot(412)
+# ax2.plot(sim.times, stim, color='r')
+# ax2.set_ylabel("Stimulation (µA/cm²)")
+
+# ax3 = plt.subplot(413, sharex=ax1)
+# ax3.plot(sim.times, sim.StateH, label='h')
+# ax3.plot(sim.times, sim.StateM, label='m')
+# ax3.plot(sim.times, sim.StateN, label='n')
+# ax3.set_ylabel("Activation (frac)")
+# ax3.legend()
+
+ax4 = plt.subplot(2,1,1, sharex=ax1)
+ax4.plot(sim.times, sim.INa, label='VGSC')
+ax4.plot(sim.times, sim.IK, label='VGKC')
+ax4.plot(sim.times, sim.IKleak, label='KLeak')
+ax4.set_ylabel("Current (µA/cm²)")
+ax4.set_xlabel("Simulation Time (milliseconds)")
+ax4.legend()
+
+plt.tight_layout()
+plt.show()
+```
 
 ## {fullscreen=false}
 ```{python}
@@ -196,37 +268,37 @@ sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
 
 # plot the results with MatPlotLib
 
-ax1 = plt.subplot(1,1,1)
+ax1 = plt.subplot(3,1,1)
 ax1.plot(sim.times, sim.Vm - 70, color='b')
 ax1.set_ylabel("Potential (mV)")
-ax1.set_title("Hodgkin-Huxley Spiking Neuron Model", fontSize=16)
+ax1.set_title("Hodgkin-Huxley Spiking Neuron Model")
 
-# ax2 = plt.subplot(412)
-# ax2.plot(sim.times, stim, color='r')
-# ax2.set_ylabel("Stimulation (µA/cm²)")
+ax2 = plt.subplot(412)
+ax2.plot(sim.times, stim, color='r')
+ax2.set_ylabel("Stimulation (µA/cm²)")
 
-# ax3 = plt.subplot(413, sharex=ax1)
-# ax3.plot(sim.times, sim.StateH, label='h')
-# ax3.plot(sim.times, sim.StateM, label='m')
-# ax3.plot(sim.times, sim.StateN, label='n')
-# ax3.set_ylabel("Activation (frac)")
-# ax3.legend()
+ax3 = plt.subplot(413, sharex=ax1)
+ax3.plot(sim.times, sim.StateH, label='h')
+ax3.plot(sim.times, sim.StateM, label='m')
+ax3.plot(sim.times, sim.StateN, label='n')
+ax3.set_ylabel("Activation (frac)")
+ax3.legend()
 
-ax4 = plt.subplot(2,1,1, sharex=ax1)
-ax4.plot(sim.times, sim.INa, label='VGSC')
-ax4.plot(sim.times, sim.IK, label='VGKC')
-ax4.plot(sim.times, sim.IKleak, label='KLeak')
-ax4.set_ylabel("Current (µA/cm²)")
-ax4.set_xlabel("Simulation Time (milliseconds)")
-ax4.legend()
+# ax4 = plt.subplot(2,1,1, sharex=ax1)
+# ax4.plot(sim.times, sim.INa, label='VGSC')
+# ax4.plot(sim.times, sim.IK, label='VGKC')
+# ax4.plot(sim.times, sim.IKleak, label='KLeak')
+# ax4.set_ylabel("Current (µA/cm²)")
+# ax4.set_xlabel("Simulation Time (milliseconds)")
+# ax4.legend()
 
 plt.tight_layout()
 plt.show()
 ```
 
 
-## Voltage {auto-animate=true auto-animate-easing="ease-in-out"}
-### Action Potentials
+## _ {auto-animate=true auto-animate-easing="ease-in-out"}
+### Voltage : Action potentials
 ![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
 ![](./media/minnie_w_back_V3.png){.absolute left=550 top=-100 width=100}
 ![](./media/purple_martinotti_7_.png){.absolute left=300 top=-100 width=200}
@@ -235,10 +307,16 @@ plt.show()
 ![](./media/arm_muscles.png){.absolute left=825 top=-100 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
 
-Hodgkin-Huxley. predictions for conductances
+testing Hodgkin-Huxley predictions for ioinc conductances
+![](./media/hh_conds.png){.absolute left=30 top=250 width=900}  
 
-## Neurons {auto-animate=true auto-animate-easing="ease-in-out"}
-### anatomy
+::: footer
+MIT Introduction to Neural Computation, Michael Fee
+:::
+
+
+## _ {auto-animate=true auto-animate-easing="ease-in-out"}
+### Neurons : Synaptic transmission
 ![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
 ![](./media/minnie_w_back_V3.png){.absolute left=450 top=-100 width=250}
 ![](./media/purple_martinotti_7_.png){.absolute left=325 top=-100 width=100}
@@ -246,11 +324,31 @@ Hodgkin-Huxley. predictions for conductances
 ![](./media/kv31.png){.absolute left=0 top=-100 width=100}
 ![](./media/arm_muscles.png){.absolute left=825 top=-100 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
+![](./media/synapses-synaptic.gif){.absolute width=900 left=50}
+
+## _ {auto-animate=true auto-animate-easing="ease-in-out"}
+### Neurons : Synaptic connectivity
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=-100 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=-100 width=100}
+![](./media/synapse.png){.absolute left=125 top=-100 width=250} 
+![](./media/kv31.png){.absolute left=0 top=-100 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=-100 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
+
+::: {.column width="60%"}
 Ramon y Cajal
-![](./media/ramonycajal1.jpg){.absolute width=300}
-![](./media/ramonycajal2.jpeg){.absolute width=300 left=350}
+![](./media/ramonycajal1.jpg){.absolute width=250}
+![](./media/ramonycajal2.jpeg){.absolute width=250 left=270}
+:::
 
-## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
+::: {.column width="40%"}
+How do we measure connectivity?
+...voltage!
+:::
+
+## _ {auto-animate=true auto-animate-easing="ease-in-out"}
+### Neurons : Synaptic connectivity
 ![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
 ![](./media/minnie_w_back_V3.png){.absolute left=450 top=-100 width=250}
 ![](./media/purple_martinotti_7_.png){.absolute left=325 top=-100 width=100}
@@ -258,7 +356,99 @@ Ramon y Cajal
 ![](./media/kv31.png){.absolute left=0 top=-100 width=100}
 ![](./media/arm_muscles.png){.absolute left=825 top=-100 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=950 top=-100 width=100}  
-- neurons
+![](./media/multipatch_rig.png){.absolute top=150 width=800}
+![](./media/multipatch_conn.png){.absolute left=570 top=300}
+
+::: footer
+DOI: 10.1126/science.abj5861
+:::
+
+## {fullscreen=false}
+```{python}
+#| echo: true
+#| output-location: column
+
+import numpy as np
+from aisynphys.database import SynphysDatabase
+from aisynphys.cell_class import CellClass, classify_cells, classify_pairs
+from aisynphys.connectivity import measure_connectivity, pair_was_probed
+import matplotlib.colors, matplotlib.cm
+import matplotlib.pyplot as plt
+from aisynphys.ui.notebook import show_connectivity_matrix
+
+db = SynphysDatabase.load_current('small')
+mouse_pairs = db.pair_query(project_name=["mouse V1 coarse matrix", "mouse V1 pre-production"]).all()
+
+cell_class_criteria = {
+    'l23pyr': {'dendrite_type': 'spiny',       'cortical_layer': '2/3'},
+    'l23pv':  {'cre_type': 'pvalb',            'cortical_layer': '2/3'},
+    'l23sst': {'cre_type': 'sst',              'cortical_layer': '2/3'},
+    'l23vip': {'cre_type': 'vip',              'cortical_layer': '2/3'},
+    'l4pyr':  {'cre_type': ('nr5a1', 'rorb'),  'cortical_layer': '4'},
+    'l4pv':   {'cre_type': 'pvalb',            'cortical_layer': '4'},
+    'l4sst':  {'cre_type': 'sst',              'cortical_layer': '4'},
+    'l4vip':  {'cre_type': 'vip',              'cortical_layer': '4'},
+    'l5et':   {'cre_type': ('sim1', 'fam84b'), 'cortical_layer': '5'},
+    'l5it':   {'cre_type': 'tlx3',             'cortical_layer': '5'}, 
+    'l5pv':   {'cre_type': 'pvalb',            'cortical_layer': '5'},
+    'l5sst':  {'cre_type': 'sst',              'cortical_layer': '5'},
+    'l5vip':  {'cre_type': 'vip',              'cortical_layer': '5'},
+    'l6pyr':  {'cre_type': 'ntsr1',            'cortical_layer': ('6a','6b')},
+    'l6pv':   {'cre_type': 'pvalb',            'cortical_layer': ('6a','6b')},
+    'l6sst':  {'cre_type': 'sst',              'cortical_layer': ('6a','6b')},
+    'l6vip':  {'cre_type': 'vip',              'cortical_layer': ('6a','6b')},
+}
+cell_classes = {name:CellClass(name=name, **criteria) for name,criteria in cell_class_criteria.items()}
+
+# Group all cells by selected classes
+cell_groups = classify_cells(cell_classes.values(), pairs=mouse_pairs)
+
+# Group pairs into (pre_class, post_class) groups
+pair_groups = classify_pairs(mouse_pairs, cell_groups)
+
+# analyze matrix elements
+results = measure_connectivity(pair_groups, sigma=100e-6, dist_measure='lateral_distance')
+
+# define a colormap and log normalization used to color the heatmap
+norm = matplotlib.colors.LogNorm(vmin=0.01, vmax=1.0, clip=True)
+cmap = matplotlib.cm.get_cmap('plasma')
+
+# define the display labels to use for each cell subclass:
+class_labels = {
+    'l23pyr': 'L2/3 Pyr\nspiny',
+    'l23pv':  'L2/3 Pv',
+    'l23sst': 'L2/3 Sst',
+    'l23vip': 'L2/3 Vip',
+    'l4pyr':  'L4 Pyr\n nr5a1',
+    'l4pv':   'L4 Pv',
+    'l4sst':  'L4 Sst',
+    'l4vip':  'L4 Vip',
+    'l5et':   'L5 Pyr ET\nsim1, fam84b',
+    'l5it':   'L5 Pyr IT\ntlx3',
+    'l5pv':   'L5 Pv',
+    'l5sst':  'L5 Sst',
+    'l5vip':  'L5 Vip',
+    'l6pyr':  'L6 Pyr\nntsr1',
+    'l6pv':   'L6 Pv',
+    'l6sst':  'L6 Sst',
+    'l6vip':  'L6 Vip',
+}
+
+# create a figure/axes to draw on
+fig, ax = plt.subplots(figsize=(15, 15))
+
+# finally, draw the colormap using the provided function:
+im, cbar, labels = show_connectivity_matrix(
+    ax=ax, 
+    results=results, 
+    pre_cell_classes=cell_classes.values(), 
+    post_cell_classes=cell_classes.values(), 
+    class_labels=class_labels, 
+    cmap=cmap, 
+    norm=norm,
+    distance_adjusted=True
+)
+```
 
 ## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
 ![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=-100 width=100}
