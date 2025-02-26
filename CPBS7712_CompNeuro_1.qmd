@@ -13,7 +13,7 @@ jupyter: python3
 ![](./media/ConceptMap.png){.nostretch fig-align="center" width=580}
 
 ::: footer
-neuromatch.org
+neuromatch.io
 :::
 
 # Outline {auto-animate=true}
@@ -164,9 +164,66 @@ Hodgkin-Huxley experiments
 
 Hodgkin-Huxley. equivalent circuit and equation
 
-## {fullscreen=true}
 
-<iframe class="stretch" data-src="https://hub.2i2c.mybinder.org/user/openworm-hodgkin_huxley_tutorial-0drgr1w5/doc/tree/notebooks/Python_HH_version/Python_Notebook_HH.ipynb"></iframe>
+## {fullscreen=false}
+```{python}
+#| echo: true
+#| output-location: column
+
+import sys
+import os
+if not os.path.exists("./src/pyhh/__init__.py"):
+    raise Exception("script must be run in project root folder")
+sys.path.append("./src")
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pyhh
+
+# customize a neuron model if desired
+model = pyhh.HHModel()
+model.gNa = 100  # typically 120
+model.gK = 5  # typically 36
+model.EK = -35  # typically -12
+
+# customize a stimulus waveform
+stim = np.zeros(20000)
+stim[7000:13000] = 50  # add a square pulse
+
+# simulate the model cell using the custom waveform
+sim = pyhh.Simulation(model)
+sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
+
+# plot the results with MatPlotLib
+
+ax1 = plt.subplot(1,1,1)
+ax1.plot(sim.times, sim.Vm - 70, color='b')
+ax1.set_ylabel("Potential (mV)")
+ax1.set_title("Hodgkin-Huxley Spiking Neuron Model", fontSize=16)
+
+# ax2 = plt.subplot(412)
+# ax2.plot(sim.times, stim, color='r')
+# ax2.set_ylabel("Stimulation (µA/cm²)")
+
+# ax3 = plt.subplot(413, sharex=ax1)
+# ax3.plot(sim.times, sim.StateH, label='h')
+# ax3.plot(sim.times, sim.StateM, label='m')
+# ax3.plot(sim.times, sim.StateN, label='n')
+# ax3.set_ylabel("Activation (frac)")
+# ax3.legend()
+
+ax4 = plt.subplot(2,1,1, sharex=ax1)
+ax4.plot(sim.times, sim.INa, label='VGSC')
+ax4.plot(sim.times, sim.IK, label='VGKC')
+ax4.plot(sim.times, sim.IKleak, label='KLeak')
+ax4.set_ylabel("Current (µA/cm²)")
+ax4.set_xlabel("Simulation Time (milliseconds)")
+ax4.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
 
 ## Voltage {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Action Potentials
@@ -270,28 +327,6 @@ results of graph of mri data
 # Time domain
 Analysis
 
-
-
-## interactive 
-For a demonstration of a line plot on a polar axis, see @fig-polar.
-
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 4 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
 
 # Fourier domain
 Analysis
