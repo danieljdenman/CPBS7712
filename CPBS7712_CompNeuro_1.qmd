@@ -12,7 +12,7 @@ height: 1200
 
 # {auto-animate=true}
 ### theoretical models _and_ data-driven analyses {.center}
-![](./media/ConceptMap.png){.nostretch fig-align="center" width=580}
+![](./media/ConceptMap.png){.nostretch fig-align="center" width=1000}
 
 ::: footer
 neuromatch.io
@@ -568,7 +568,45 @@ Analyses
 ![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
 ![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
 
-compare heirarchy from harris to jia/siegle
+voltage to point processes to firing rate functions
+
+## Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=125}
+![](./media/minnie_w_back_V3.png){.absolute left=325 top=980 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=200}
+![](./media/synapse.png){.absolute width=100 left=120 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
+
+![](./media/psth.png){.center width=800} 
+
+## Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=125}
+![](./media/minnie_w_back_V3.png){.absolute left=325 top=980 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=200}
+![](./media/synapse.png){.absolute width=100 left=120 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
+
+multiple point processes
+
+## Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=125}
+![](./media/minnie_w_back_V3.png){.absolute left=325 top=980 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=200}
+![](./media/synapse.png){.absolute width=100 left=120 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
+
+compare heirarchy from anatomy to dynamics
+![](./media/survey_heirarchy.png){.center width=800} 
+
+::: footer
+https://doi.org/10.1038/s41586-020-03171-x
+:::
 
 # Fourier domain {auto-animate=true auto-animate-easing="ease-in-out"}
 Analyses
@@ -589,7 +627,7 @@ steriade, 1995
 ![](./media/fourier2.jpg){.absolute top=260 width=800} 
 ![](./media/fourier.gif){.absolute top=800 width=800} 
 
-##  - {auto-animate=true}
+##  summary {auto-animate=true}
 ![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=600 width=300}
 ![](./media/minnie_w_back_V3.png){.absolute left=310 top=690 width=200}
 ![](./media/purple_martinotti_7_.png){.absolute width=300 top=450 left=50}
@@ -603,7 +641,4 @@ steriade, 1995
   - what are we computing about?
 - Time Domain Methods
 - Frequency Domain Methods 
-:::
-::: footer
-SUMMARY
 :::
