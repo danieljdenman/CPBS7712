@@ -340,7 +340,7 @@ Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 27 2025
 <span id="cb1-14"><a href=""></a><span class="im">import</span> pyhh</span>
 <span id="cb1-15"><a href=""></a></span>
 <span id="cb1-16"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
-<span id="cb1-17"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
+<span id="cb1-17"><a href=""></a>model <span class="op">=</span> pyhh.HHModel() <span class="co"># ∑𝑘𝐼𝑘=𝑔Na𝑚3ℎ(𝑢−𝐸Na)+𝑔K𝑛4(𝑢−𝐸K)+𝑔𝐿(𝑢−𝐸𝐿).</span></span>
 <span id="cb1-18"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
 <span id="cb1-19"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
 <span id="cb1-20"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
@@ -370,158 +370,65 @@ Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 27 2025
 <span id="cb1-44"><a href=""></a></span>
 <span id="cb1-45"><a href=""></a>plt.tight_layout()</span>
 <span id="cb1-46"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://github.com/swharden/pyHH</p>
+</div>
 </section>
-<section id="section-16" class="slide level2" data-fullscreen="true" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title"></h2>
-<div id="817f0162" class="cell columns column-output-location" data-execution_count="1">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> sys</span>
-<span id="cb2-2" class="hljs-ln-code"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb2-3" class="hljs-ln-code"><a href=""></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">"./src/pyhh/__init__.py"</span>):</span>
-<span id="cb2-4" class="hljs-ln-code"><a href=""></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"script must be run in project root folder"</span>)</span>
-<span id="cb2-5" class="hljs-ln-code"><a href=""></a>sys.path.append(<span class="st">"./src"</span>)</span>
-<span id="cb2-6" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-7" class="hljs-ln-code"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-8" class="hljs-ln-code"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-9" class="hljs-ln-code"><a href=""></a><span class="im">import</span> pyhh</span>
-<span id="cb2-10" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-11" class="hljs-ln-code"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
-<span id="cb2-12" class="hljs-ln-code"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
-<span id="cb2-13" class="hljs-ln-code"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
-<span id="cb2-14" class="hljs-ln-code"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
-<span id="cb2-15" class="hljs-ln-code"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
-<span id="cb2-16" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-17" class="hljs-ln-code"><a href=""></a><span class="co"># customize a stimulus waveform</span></span>
-<span id="cb2-18" class="hljs-ln-code"><a href=""></a>stim <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
-<span id="cb2-19" class="hljs-ln-code"><a href=""></a>stim[<span class="dv">7000</span>:<span class="dv">13000</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># add a square pulse</span></span>
-<span id="cb2-20" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-21" class="hljs-ln-code"><a href=""></a><span class="co"># simulate the model cell using the custom waveform</span></span>
-<span id="cb2-22" class="hljs-ln-code"><a href=""></a>sim <span class="op">=</span> pyhh.Simulation(model)</span>
-<span id="cb2-23" class="hljs-ln-code"><a href=""></a>sim.Run(stimulusWaveform<span class="op">=</span>stim, stepSizeMs<span class="op">=</span><span class="fl">0.01</span>)</span>
-<span id="cb2-24" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-25" class="hljs-ln-code"><a href=""></a><span class="co"># plot the results with MatPlotLib</span></span>
-<span id="cb2-26" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-27" class="hljs-ln-code"><a href=""></a>ax1 <span class="op">=</span> plt.subplot(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-28" class="hljs-ln-code"><a href=""></a>ax1.plot(sim.times, sim.Vm <span class="op">-</span> <span class="dv">70</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb2-29" class="hljs-ln-code"><a href=""></a>ax1.set_ylabel(<span class="st">"Potential (mV)"</span>)</span>
-<span id="cb2-30" class="hljs-ln-code"><a href=""></a>ax1.set_title(<span class="st">"Hodgkin-Huxley Spiking Neuron Model"</span>)</span>
-<span id="cb2-31" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-32" class="hljs-ln-code"><a href=""></a>ax4 <span class="op">=</span> plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>, sharex<span class="op">=</span>ax1)</span>
-<span id="cb2-33" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.INa, label<span class="op">=</span><span class="st">'VGSC'</span>)</span>
-<span id="cb2-34" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.IK, label<span class="op">=</span><span class="st">'VGKC'</span>)</span>
-<span id="cb2-35" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.IKleak, label<span class="op">=</span><span class="st">'KLeak'</span>)</span>
-<span id="cb2-36" class="hljs-ln-code"><a href=""></a>ax4.set_ylabel(<span class="st">"Current (µA/cm²)"</span>)</span>
-<span id="cb2-37" class="hljs-ln-code"><a href=""></a>ax4.set_xlabel(<span class="st">"Simulation Time (milliseconds)"</span>)</span>
-<span id="cb2-38" class="hljs-ln-code"><a href=""></a>ax4.legend()</span>
-<span id="cb2-39" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb2-40" class="hljs-ln-code"><a href=""></a>plt.tight_layout()</span>
-<span id="cb2-41" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>simulating 20000 time points...
-simulation complete</code></pre>
+<section id="hh-compartmental-model" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">HH compartmental model</h2>
+<div class="fragment">
+<p><img data-src="./media/hh_result.png" class="absolute" style="top: 250px; left: 230px; width: 600px; "></p>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="CPBS7712_CompNeuro_1_files/figure-revealjs/cell-2-output-2.png" width="950" height="258"></p>
-</figure>
+<div class="fragment">
+<p>m–&gt;Na+ n–&gt;K+ <img data-src="./media/hh_result2.png" class="absolute" style="top: 550px; left: 230px; width: 600px; "></p>
 </div>
+<div class="footer">
+<p>https://github.com/swharden/pyHH</p>
 </div>
-</div></div>
 </section>
-<section id="section-17" class="slide level2" data-fullscreen="false">
-<h2></h2>
-<div id="a4f67629" class="cell columns column-output-location" data-execution_count="2">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> sys</span>
-<span id="cb4-2"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb4-3"><a href=""></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">"./src/pyhh/__init__.py"</span>):</span>
-<span id="cb4-4"><a href=""></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"script must be run in project root folder"</span>)</span>
-<span id="cb4-5"><a href=""></a>sys.path.append(<span class="st">"./src"</span>)</span>
-<span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-8"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-9"><a href=""></a><span class="im">import</span> pyhh</span>
-<span id="cb4-10"><a href=""></a></span>
-<span id="cb4-11"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
-<span id="cb4-12"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
-<span id="cb4-13"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
-<span id="cb4-14"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
-<span id="cb4-15"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
-<span id="cb4-16"><a href=""></a></span>
-<span id="cb4-17"><a href=""></a><span class="co"># customize a stimulus waveform</span></span>
-<span id="cb4-18"><a href=""></a>stim <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
-<span id="cb4-19"><a href=""></a>stim[<span class="dv">7000</span>:<span class="dv">13000</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># add a square pulse</span></span>
-<span id="cb4-20"><a href=""></a></span>
-<span id="cb4-21"><a href=""></a><span class="co"># simulate the model cell using the custom waveform</span></span>
-<span id="cb4-22"><a href=""></a>sim <span class="op">=</span> pyhh.Simulation(model)</span>
-<span id="cb4-23"><a href=""></a>sim.Run(stimulusWaveform<span class="op">=</span>stim, stepSizeMs<span class="op">=</span><span class="fl">0.01</span>)</span>
-<span id="cb4-24"><a href=""></a></span>
-<span id="cb4-25"><a href=""></a><span class="co"># plot the results with MatPlotLib</span></span>
-<span id="cb4-26"><a href=""></a></span>
-<span id="cb4-27"><a href=""></a>ax1 <span class="op">=</span> plt.subplot(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb4-28"><a href=""></a>ax1.plot(sim.times, sim.Vm <span class="op">-</span> <span class="dv">70</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb4-29"><a href=""></a>ax1.set_ylabel(<span class="st">"Potential (mV)"</span>)</span>
-<span id="cb4-30"><a href=""></a>ax1.set_title(<span class="st">"Hodgkin-Huxley Spiking Neuron Model"</span>)</span>
-<span id="cb4-31"><a href=""></a></span>
-<span id="cb4-32"><a href=""></a>ax2 <span class="op">=</span> plt.subplot(<span class="dv">412</span>)</span>
-<span id="cb4-33"><a href=""></a>ax2.plot(sim.times, stim, color<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb4-34"><a href=""></a>ax2.set_ylabel(<span class="st">"Stimulation (µA/cm²)"</span>)</span>
-<span id="cb4-35"><a href=""></a></span>
-<span id="cb4-36"><a href=""></a>ax3 <span class="op">=</span> plt.subplot(<span class="dv">413</span>, sharex<span class="op">=</span>ax1)</span>
-<span id="cb4-37"><a href=""></a>ax3.plot(sim.times, sim.StateH, label<span class="op">=</span><span class="st">'h'</span>)</span>
-<span id="cb4-38"><a href=""></a>ax3.plot(sim.times, sim.StateM, label<span class="op">=</span><span class="st">'m'</span>)</span>
-<span id="cb4-39"><a href=""></a>ax3.plot(sim.times, sim.StateN, label<span class="op">=</span><span class="st">'n'</span>)</span>
-<span id="cb4-40"><a href=""></a>ax3.set_ylabel(<span class="st">"Activation (frac)"</span>)</span>
-<span id="cb4-41"><a href=""></a>ax3.legend()</span>
-<span id="cb4-42"><a href=""></a></span>
-<span id="cb4-43"><a href=""></a><span class="co"># ax4 = plt.subplot(2,1,1, sharex=ax1)</span></span>
-<span id="cb4-44"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.INa, label='VGSC')</span></span>
-<span id="cb4-45"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.IK, label='VGKC')</span></span>
-<span id="cb4-46"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.IKleak, label='KLeak')</span></span>
-<span id="cb4-47"><a href=""></a><span class="co"># ax4.set_ylabel("Current (µA/cm²)")</span></span>
-<span id="cb4-48"><a href=""></a><span class="co"># ax4.set_xlabel("Simulation Time (milliseconds)")</span></span>
-<span id="cb4-49"><a href=""></a><span class="co"># ax4.legend()</span></span>
-<span id="cb4-50"><a href=""></a></span>
-<span id="cb4-51"><a href=""></a>plt.tight_layout()</span>
-<span id="cb4-52"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>simulating 20000 time points...
-simulation complete</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="CPBS7712_CompNeuro_1_files/figure-revealjs/cell-3-output-2.png" width="946" height="273"></p>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section id="section-18" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<section id="section-16" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">_</h2>
 <h3 id="voltage-action-potentials-2">Voltage : Action potentials</h3>
 <p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 200px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
-<p>testing Hodgkin-Huxley predictions for ioinc conductances <img data-src="./media/hh_conds.png" class="absolute" style="top: 250px; left: 30px; width: 900px; "></p>
+<p>testing Hodgkin-Huxley predictions for ionic conductances <img data-src="./media/hh_conds.png" class="absolute" style="top: 250px; left: 30px; width: 900px; "></p>
 <div class="footer">
 <p>MIT Introduction to Neural Computation, Michael Fee</p>
 </div>
 </section>
+<section id="section-17" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-neuron-models">Voltage : NEURON models</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 200px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/singleneuron.jpeg" class="center" width="800"></p>
+<div class="footer">
+<p>10.1126/science.112724</p>
+</div>
+</section>
+<section id="section-18" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-neuron-models-1">Voltage : NEURON models</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/network.png" class="center" width="800"></p>
+<div class="footer">
+<p>https://doi.org/10.1016/j.neuron.2020.01.040</p>
+</div>
+</section>
 <section id="section-19" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-neuron-models-2">Voltage : NEURON models</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 600px; width: 250px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 150px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/bluebrain.png" class="center" width="800"></p>
+<div class="footer">
+<p>https://bbp.epfl.ch/bbp/research/domains/bluebrain/index.html</p>
+</div>
+</section>
+<section id="section-20" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">_</h2>
 <h3 id="neurons-synaptic-transmission">Neurons : Synaptic transmission</h3>
 <p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
 <img data-src="./media/synapses-synaptic.gif" class="absolute" style="left: 50px; width: 900px; "></p>
 </section>
-<section id="section-20" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<section id="section-21" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">_</h2>
 <h3 id="neurons-synaptic-connectivity">Neurons : Synaptic connectivity</h3>
 <p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
@@ -530,7 +437,7 @@ simulation complete</code></pre>
 </div><div class="column" style="width:40%;">
 <p>How do we measure connectivity? …voltage!</p>
 </div></section>
-<section id="section-21" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<section id="section-22" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">_</h2>
 <h3 id="neurons-synaptic-connectivity-1">Neurons : Synaptic connectivity</h3>
 <p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
@@ -538,92 +445,101 @@ simulation complete</code></pre>
 <div class="footer">
 <p>DOI: 10.1126/science.abj5861</p>
 </div>
-<!-- ## {fullscreen=false}
+</section>
+<section id="section-23" class="slide level2" data-fullscreen="false">
+<h2></h2>
+<div id="e880c07c" class="cell columns column-output-location" data-execution_count="1">
+<div class="column">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href=""></a><span class="co"># from aisynphys.database import SynphysDatabase</span></span>
+<span id="cb2-3"><a href=""></a><span class="co"># from aisynphys.cell_class import CellClass, classify_cells, classify_pairs</span></span>
+<span id="cb2-4"><a href=""></a><span class="co"># from aisynphys.connectivity import measure_connectivity, pair_was_probed</span></span>
+<span id="cb2-5"><a href=""></a><span class="im">import</span> matplotlib.colors, matplotlib.cm</span>
+<span id="cb2-6"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-7"><a href=""></a><span class="co"># from aisynphys.ui.notebook import show_connectivity_matrix</span></span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a>  <span class="co"># db = SynphysDatabase.load_current('small')</span></span>
+<span id="cb2-10"><a href=""></a>  <span class="co"># mouse_pairs = db.pair_query(project_name=["mouse V1 coarse matrix", "mouse V1 pre-production"]).all()</span></span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a>  <span class="co"># cell_class_criteria = {</span></span>
+<span id="cb2-13"><a href=""></a>  <span class="co">#     'l23pyr': {'dendrite_type': 'spiny',       'cortical_layer': '2/3'},</span></span>
+<span id="cb2-14"><a href=""></a>  <span class="co">#     'l23pv':  {'cre_type': 'pvalb',            'cortical_layer': '2/3'},</span></span>
+<span id="cb2-15"><a href=""></a>  <span class="co">#     'l23sst': {'cre_type': 'sst',              'cortical_layer': '2/3'},</span></span>
+<span id="cb2-16"><a href=""></a>  <span class="co">#     'l23vip': {'cre_type': 'vip',              'cortical_layer': '2/3'},</span></span>
+<span id="cb2-17"><a href=""></a>  <span class="co">#     'l4pyr':  {'cre_type': ('nr5a1', 'rorb'),  'cortical_layer': '4'},</span></span>
+<span id="cb2-18"><a href=""></a>  <span class="co">#     'l4pv':   {'cre_type': 'pvalb',            'cortical_layer': '4'},</span></span>
+<span id="cb2-19"><a href=""></a>  <span class="co">#     'l4sst':  {'cre_type': 'sst',              'cortical_layer': '4'},</span></span>
+<span id="cb2-20"><a href=""></a>  <span class="co">#     'l4vip':  {'cre_type': 'vip',              'cortical_layer': '4'},</span></span>
+<span id="cb2-21"><a href=""></a>  <span class="co">#     'l5et':   {'cre_type': ('sim1', 'fam84b'), 'cortical_layer': '5'},</span></span>
+<span id="cb2-22"><a href=""></a>  <span class="co">#     'l5it':   {'cre_type': 'tlx3',             'cortical_layer': '5'}, </span></span>
+<span id="cb2-23"><a href=""></a>  <span class="co">#     'l5pv':   {'cre_type': 'pvalb',            'cortical_layer': '5'},</span></span>
+<span id="cb2-24"><a href=""></a>  <span class="co">#     'l5sst':  {'cre_type': 'sst',              'cortical_layer': '5'},</span></span>
+<span id="cb2-25"><a href=""></a>  <span class="co">#     'l5vip':  {'cre_type': 'vip',              'cortical_layer': '5'},</span></span>
+<span id="cb2-26"><a href=""></a>  <span class="co">#     'l6pyr':  {'cre_type': 'ntsr1',            'cortical_layer': ('6a','6b')},</span></span>
+<span id="cb2-27"><a href=""></a>  <span class="co">#     'l6pv':   {'cre_type': 'pvalb',            'cortical_layer': ('6a','6b')},</span></span>
+<span id="cb2-28"><a href=""></a>  <span class="co">#     'l6sst':  {'cre_type': 'sst',              'cortical_layer': ('6a','6b')},</span></span>
+<span id="cb2-29"><a href=""></a>  <span class="co">#     'l6vip':  {'cre_type': 'vip',              'cortical_layer': ('6a','6b')},</span></span>
+<span id="cb2-30"><a href=""></a>  <span class="co"># }</span></span>
+<span id="cb2-31"><a href=""></a>  <span class="co"># cell_classes = {name:CellClass(name=name, **criteria) for name,criteria in cell_class_criteria.items()}</span></span>
+<span id="cb2-32"><a href=""></a></span>
+<span id="cb2-33"><a href=""></a>  <span class="co"># # Group all cells by selected classes</span></span>
+<span id="cb2-34"><a href=""></a>  <span class="co"># cell_groups = classify_cells(cell_classes.values(), pairs=mouse_pairs)</span></span>
+<span id="cb2-35"><a href=""></a></span>
+<span id="cb2-36"><a href=""></a>  <span class="co"># # Group pairs into (pre_class, post_class) groups</span></span>
+<span id="cb2-37"><a href=""></a>  <span class="co"># pair_groups = classify_pairs(mouse_pairs, cell_groups)</span></span>
+<span id="cb2-38"><a href=""></a></span>
+<span id="cb2-39"><a href=""></a>  <span class="co"># # analyze matrix elements</span></span>
+<span id="cb2-40"><a href=""></a>  <span class="co"># results = measure_connectivity(pair_groups, sigma=100e-6, dist_measure='lateral_distance')</span></span>
+<span id="cb2-41"><a href=""></a></span>
+<span id="cb2-42"><a href=""></a>  <span class="co"># # define a colormap and log normalization used to color the heatmap</span></span>
+<span id="cb2-43"><a href=""></a>  <span class="co"># norm = matplotlib.colors.LogNorm(vmin=0.01, vmax=1.0, clip=True)</span></span>
+<span id="cb2-44"><a href=""></a>  <span class="co"># cmap = matplotlib.cm.get_cmap('plasma')</span></span>
+<span id="cb2-45"><a href=""></a></span>
+<span id="cb2-46"><a href=""></a>  <span class="co"># # define the display labels to use for each cell subclass:</span></span>
+<span id="cb2-47"><a href=""></a>  <span class="co"># class_labels = {</span></span>
+<span id="cb2-48"><a href=""></a>  <span class="co">#     'l23pyr': 'L2/3 Pyr\nspiny',</span></span>
+<span id="cb2-49"><a href=""></a>  <span class="co">#     'l23pv':  'L2/3 Pv',</span></span>
+<span id="cb2-50"><a href=""></a>  <span class="co">#     'l23sst': 'L2/3 Sst',</span></span>
+<span id="cb2-51"><a href=""></a>  <span class="co">#     'l23vip': 'L2/3 Vip',</span></span>
+<span id="cb2-52"><a href=""></a>  <span class="co">#     'l4pyr':  'L4 Pyr\n nr5a1',</span></span>
+<span id="cb2-53"><a href=""></a>  <span class="co">#     'l4pv':   'L4 Pv',</span></span>
+<span id="cb2-54"><a href=""></a>  <span class="co">#     'l4sst':  'L4 Sst',</span></span>
+<span id="cb2-55"><a href=""></a>  <span class="co">#     'l4vip':  'L4 Vip',</span></span>
+<span id="cb2-56"><a href=""></a>  <span class="co">#     'l5et':   'L5 Pyr ET\nsim1, fam84b',</span></span>
+<span id="cb2-57"><a href=""></a>  <span class="co">#     'l5it':   'L5 Pyr IT\ntlx3',</span></span>
+<span id="cb2-58"><a href=""></a>  <span class="co">#     'l5pv':   'L5 Pv',</span></span>
+<span id="cb2-59"><a href=""></a>  <span class="co">#     'l5sst':  'L5 Sst',</span></span>
+<span id="cb2-60"><a href=""></a>  <span class="co">#     'l5vip':  'L5 Vip',</span></span>
+<span id="cb2-61"><a href=""></a>  <span class="co">#     'l6pyr':  'L6 Pyr\nntsr1',</span></span>
+<span id="cb2-62"><a href=""></a>  <span class="co">#     'l6pv':   'L6 Pv',</span></span>
+<span id="cb2-63"><a href=""></a>  <span class="co">#     'l6sst':  'L6 Sst',</span></span>
+<span id="cb2-64"><a href=""></a>  <span class="co">#     'l6vip':  'L6 Vip',</span></span>
+<span id="cb2-65"><a href=""></a>  <span class="co"># }</span></span>
+<span id="cb2-66"><a href=""></a></span>
+<span id="cb2-67"><a href=""></a>  <span class="co"># # create a figure/axes to draw on</span></span>
+<span id="cb2-68"><a href=""></a>  <span class="co"># fig, ax = plt.subplots(figsize=(15, 15))</span></span>
+<span id="cb2-69"><a href=""></a></span>
+<span id="cb2-70"><a href=""></a><span class="co"># finally, draw the colormap using the provided function:</span></span>
+<span id="cb2-71"><a href=""></a><span class="co"># im, cbar, labels = show_connectivity_matrix(</span></span>
+<span id="cb2-72"><a href=""></a><span class="co">#     ax=ax, </span></span>
+<span id="cb2-73"><a href=""></a><span class="co">#     results=results, </span></span>
+<span id="cb2-74"><a href=""></a><span class="co">#     pre_cell_classes=cell_classes.values(), </span></span>
+<span id="cb2-75"><a href=""></a><span class="co">#     post_cell_classes=cell_classes.values(), </span></span>
+<span id="cb2-76"><a href=""></a><span class="co">#     class_labels=class_labels, </span></span>
+<span id="cb2-77"><a href=""></a><span class="co">#     cmap=cmap, </span></span>
+<span id="cb2-78"><a href=""></a><span class="co">#     norm=norm,</span></span>
+<span id="cb2-79"><a href=""></a><span class="co">#     distance_adjusted=True</span></span>
+<span id="cb2-80"><a href=""></a><span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div><div class="column">
 
-#| echo: true
-#| output-location: column
+</div></div>
 
-import numpy as np
-from aisynphys.database import SynphysDatabase
-from aisynphys.cell_class import CellClass, classify_cells, classify_pairs
-from aisynphys.connectivity import measure_connectivity, pair_was_probed
-import matplotlib.colors, matplotlib.cm
-import matplotlib.pyplot as plt
-from aisynphys.ui.notebook import show_connectivity_matrix
-
-db = SynphysDatabase.load_current('small')
-mouse_pairs = db.pair_query(project_name=["mouse V1 coarse matrix", "mouse V1 pre-production"]).all()
-
-cell_class_criteria = {
-    'l23pyr': {'dendrite_type': 'spiny',       'cortical_layer': '2/3'},
-    'l23pv':  {'cre_type': 'pvalb',            'cortical_layer': '2/3'},
-    'l23sst': {'cre_type': 'sst',              'cortical_layer': '2/3'},
-    'l23vip': {'cre_type': 'vip',              'cortical_layer': '2/3'},
-    'l4pyr':  {'cre_type': ('nr5a1', 'rorb'),  'cortical_layer': '4'},
-    'l4pv':   {'cre_type': 'pvalb',            'cortical_layer': '4'},
-    'l4sst':  {'cre_type': 'sst',              'cortical_layer': '4'},
-    'l4vip':  {'cre_type': 'vip',              'cortical_layer': '4'},
-    'l5et':   {'cre_type': ('sim1', 'fam84b'), 'cortical_layer': '5'},
-    'l5it':   {'cre_type': 'tlx3',             'cortical_layer': '5'}, 
-    'l5pv':   {'cre_type': 'pvalb',            'cortical_layer': '5'},
-    'l5sst':  {'cre_type': 'sst',              'cortical_layer': '5'},
-    'l5vip':  {'cre_type': 'vip',              'cortical_layer': '5'},
-    'l6pyr':  {'cre_type': 'ntsr1',            'cortical_layer': ('6a','6b')},
-    'l6pv':   {'cre_type': 'pvalb',            'cortical_layer': ('6a','6b')},
-    'l6sst':  {'cre_type': 'sst',              'cortical_layer': ('6a','6b')},
-    'l6vip':  {'cre_type': 'vip',              'cortical_layer': ('6a','6b')},
-}
-cell_classes = {name:CellClass(name=name, **criteria) for name,criteria in cell_class_criteria.items()}
-
-# Group all cells by selected classes
-cell_groups = classify_cells(cell_classes.values(), pairs=mouse_pairs)
-
-# Group pairs into (pre_class, post_class) groups
-pair_groups = classify_pairs(mouse_pairs, cell_groups)
-
-# analyze matrix elements
-results = measure_connectivity(pair_groups, sigma=100e-6, dist_measure='lateral_distance')
-
-# define a colormap and log normalization used to color the heatmap
-norm = matplotlib.colors.LogNorm(vmin=0.01, vmax=1.0, clip=True)
-cmap = matplotlib.cm.get_cmap('plasma')
-
-# define the display labels to use for each cell subclass:
-class_labels = {
-    'l23pyr': 'L2/3 Pyr\nspiny',
-    'l23pv':  'L2/3 Pv',
-    'l23sst': 'L2/3 Sst',
-    'l23vip': 'L2/3 Vip',
-    'l4pyr':  'L4 Pyr\n nr5a1',
-    'l4pv':   'L4 Pv',
-    'l4sst':  'L4 Sst',
-    'l4vip':  'L4 Vip',
-    'l5et':   'L5 Pyr ET\nsim1, fam84b',
-    'l5it':   'L5 Pyr IT\ntlx3',
-    'l5pv':   'L5 Pv',
-    'l5sst':  'L5 Sst',
-    'l5vip':  'L5 Vip',
-    'l6pyr':  'L6 Pyr\nntsr1',
-    'l6pv':   'L6 Pv',
-    'l6sst':  'L6 Sst',
-    'l6vip':  'L6 Vip',
-}
-
-# create a figure/axes to draw on
-fig, ax = plt.subplots(figsize=(15, 15))
-
-# finally, draw the colormap using the provided function:
-# im, cbar, labels = show_connectivity_matrix(
-#     ax=ax, 
-#     results=results, 
-#     pre_cell_classes=cell_classes.values(), 
-#     post_cell_classes=cell_classes.values(), 
-#     class_labels=class_labels, 
-#     cmap=cmap, 
-#     norm=norm,
-#     distance_adjusted=True
-# )
-``` -->
+<img data-src="./media/synaptic_conn.png" class="center r-stretch" width="1000"><div class="footer">
+<p>https://nbviewer.org/github/AllenInstitute/aisynphys/blob/current-release/doc/connectivity.ipynb</p>
+</div>
 </section>
 <section id="connectivity" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">Connectivity</h2>
@@ -703,7 +619,15 @@ fig, ax = plt.subplots(figsize=(15, 15))
 <img data-src="./media/Fourier_dude.jpg" class="center r-stretch" width="800"></section>
 <section id="fourier-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">Fourier</h2>
-<p><img data-src="./media/fourier.png" class="absolute" style="top: 100px; width: 800px; "> <img data-src="./media/fourier2.jpg" class="absolute" style="top: 260px; width: 800px; "> <img data-src="./media/fourier.gif" class="absolute" style="top: 800px; width: 800px; "></p>
+<div class="fragment">
+<p><img data-src="./media/fourier.png" class="absolute" style="top: 100px; width: 800px; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="./media/fourier2.jpg" class="absolute" style="top: 260px; width: 800px; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="./media/fourier.gif" class="absolute" style="top: 800px; width: 800px; "></p>
+</div>
 </section>
 <section id="summary" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">summary</h2>
