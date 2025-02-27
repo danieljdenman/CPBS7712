@@ -28,11 +28,78 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="CPBS7712_CompNeuro_1_files/libs/revealjs/dist/theme/quarto-2a4c8bc07c7bed3f644724215556eb12.css">
+  <link rel="stylesheet" href="CPBS7712_CompNeuro_1_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -139,101 +206,503 @@ Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 27 2025
 </div>
 
 </section>
-<section class="slide level2">
-
-<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="width: 200px; "></p>
-<p><img data-src="./media/minnie_w_back_V3.png" class="absolute" style="width: 200px; "></p>
-<p><img data-src="./media/purple_martinotti_7_.png" class="absolute" style="left: 350px; width: 300px; "></p>
-<p><img data-src="./media/synapse.png" class="absolute" style="top: 500px; width: 200px; "></p>
-<p>ion channel</p>
-<p><img data-src="./media/arm_muscles.png" class="absolute" style="top: 500px; width: 200px; "></p>
-<p><img data-src="./media/triMouseDLC.gif" class="absolute" style="left: 750px; width: 200px; "></p>
-
-<aside><div>
-<p>images modified from microns-explorer.org; Gilmer et al., 2024</p>
-</div></aside></section>
-<section id="neurons" class="slide level2">
-<h2>Neurons</h2>
-<h3 id="anatomy">anatomy</h3>
-<p><img data-src="./media/ramonycajal1.jpg" class="absolute" style="width: 300px; "> <img data-src="./media/ramonycajal2.jpeg" class="absolute" style="left: 350px; width: 300px; "></p>
-</section>
-<section id="voltage" class="slide level2">
-<h2>Voltage</h2>
-<ul>
-<li>Eat eggs</li>
-<li>Drink coffee</li>
-</ul>
-</section>
-<section id="action-potentials" class="slide level2">
-<h2>Action Potentials</h2>
-<ul>
-<li>spikes</li>
-</ul>
-</section>
-<section id="connectivity" class="slide level2">
-<h2>Connectivity</h2>
-<ul>
-<li>neurons</li>
-<li>areas</li>
-</ul>
-</section>
-<section id="dynamics" class="slide level2">
-<h2>Dynamics</h2>
-</section>
-<section id="behavior" class="slide level2">
-<h2>Behavior</h2>
-<ul>
-<li>muscles</li>
-<li>movements</li>
-</ul>
-</section>
 <section>
-<section id="time-domain" class="title-slide slide level1 center">
-<h1>Time domain</h1>
-<p>Analysis</p>
+<section id="section" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title"></h1>
+
 </section>
-<section id="dinner" class="slide level2">
-<h2>Dinner</h2>
-<ul>
-<li>Eat spaghetti</li>
-<li>Drink wine</li>
-</ul>
-</section>
-<section id="going-to-sleep" class="slide level2">
-<h2>Going to sleep</h2>
-<ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
-</ul>
-</section>
-<section id="interactive" class="slide level2">
-<h2>interactive</h2>
-<p>For a demonstration of a line plot on a polar axis, see <a href="#/fig-polar" class="quarto-xref">Figure&nbsp;1</a>.</p>
-<div id="cell-fig-polar" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="CPBS7712_CompNeuro_1_files/figure-revealjs/fig-polar-output-1.png" width="450" height="439">
+<h3 class="center" id="theoretical-models-and-data-driven-analyses">theoretical models <em>and</em> data-driven analyses</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./media/ConceptMap.png" class="nostretch quarto-figure quarto-figure-center" width="580"></p>
+</figure>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A line plot on a polar axis
-</figcaption>
+<div class="footer">
+<p>neuromatch.io</p>
+</div></section>
+<section id="outline" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Outline</h1>
+<div>
+<ul>
+<li class="fragment">Neurons + Neural Systems
+<ul>
+<li class="fragment">what are we computing about?</li>
+</ul></li>
+<li class="fragment">Time Domain Methods</li>
+<li class="fragment">Frequency Domain Methods</li>
+</ul>
+</div>
+</section>
+
+<section>
+<section id="neurons-neural-systems" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Neurons + Neural Systems</h1>
+<p>A brief tour of neurobiology, emphasis on crossing scales (spatial and temporal)</p>
+</section>
+<section id="section-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "></p>
+</section>
+<section id="section-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 110px; width: 400px; "></p>
+</section>
+<section id="section-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: -50px; left: -50px; width: 500px; "></p>
+</section>
+<section id="section-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 150px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 100px; left: 20px; width: 300px; "></p>
+</section>
+<section id="section-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 150px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 100px; left: 20px; width: 200px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 0px; left: -50px; width: 300px; "></p>
+</section>
+<section id="section-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 150px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 100px; left: 20px; width: 200px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 0px; left: -150px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 120px; left: 650px; width: 400px; "></p>
+</section>
+<section id="section-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 150px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 100px; left: 20px; width: 200px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 0px; left: -150px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 220px; left: 750px; width: 200px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 0px; left: 900px; width: 350px; "></p>
+</section>
+<section id="section-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 300px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 390px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 150px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 100px; left: 20px; width: 200px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 0px; left: -150px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 220px; left: 750px; width: 200px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="left: 900px; width: 200px; "></p>
+<div class="footer">
+<p>images modified from microns-explorer.org; Gilmer et al., 2024, deeplabcut.github.io</p>
+</div>
+</section>
+<section id="section-9" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 500px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 375px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 250px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 625px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 750px; width: 100px; "></p>
+</section>
+<section id="section-10" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 600px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 475px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 350px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 725px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 850px; width: 100px; "></p>
+</section>
+<section id="section-11" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 600px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 475px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 350px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 725px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 850px; width: 100px; "><br>
+<img data-src="./media/cellmembranecircuit.jpg" class="absolute" style="top: 400px; left: 200px; width: 600px; "></p>
+<h3 id="voltage">Voltage</h3>
+<p>Membrane proteins (and lipid properties) give neurons some features of electronic circuits.</p>
+</section>
+<section id="section-12" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 600px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 475px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 350px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 725px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 850px; width: 100px; "><br>
+<img data-src="./media/cellmembranecircuit.jpg" class="absolute" style="top: 50px; left: 500px; width: 300px; "></p>
+<h3 id="voltage-1">Voltage</h3>
+<h4 id="membrane-proteins-and-lipid-properties-give-neurons-some-features-of-electronic-circuits.">Membrane proteins (and lipid properties) give neurons some features of electronic circuits.</h4>
+<p>Understanding these proteins (and lipids) shares computational approaches as many areas of bioscience - namely, protein structure.</p>
+<ul>
+<li>Alphafold, large protein models <img data-src="./media/alphafold2_.jpg" class="absolute" style="top: 600px; left: 50px; width: 900px; "></li>
+</ul>
+<div class="footer">
+<p>Jumper et al 2021 DOI: 10.1038/s41586-021-03819-2</p>
+</div>
+</section>
+<section id="section-13" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-action-potentials">Voltage : Action potentials</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 200px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
+<p>Hodgkin-Huxley experiments <img data-src="./media/hh_exp.jpg" class="absolute" style="top: 250px; left: 230px; width: 600px; "></p>
+<div class="footer">
+<p>Hodgkin and Huxley, 1953</p>
+</div>
+</section>
+<section id="section-14" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-action-potentials-1">Voltage : Action potentials</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 200px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
+<p>Hodgkin-Huxley equivalent circuit and equation <img data-src="./media/hh_diagram.gif" class="absolute" style="top: 250px; left: 230px; width: 600px; "><br>
+<img data-src="./media/hh_equation.svg" class="absolute" style="top: 750px; left: 230px; width: 600px; "></p>
+<div class="footer">
+<p>Hodgkin and Huxley, 1953; wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model</p>
+</div>
+</section>
+<section id="section-15" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<div class="sourceCode" id="cb1" data-code-line-numbers="|16-20|27-28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co">#| echo: true</span></span>
+<span id="cb1-2"><a href=""></a><span class="co">#| output-location: column-fragment</span></span>
+<span id="cb1-3"><a href=""></a><span class="co">#| code-overflow: wrap</span></span>
+<span id="cb1-4"><a href=""></a><span class="co">#| code-fold: true</span></span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a><span class="im">import</span> sys</span>
+<span id="cb1-7"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb1-8"><a href=""></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">"./src/pyhh/__init__.py"</span>):</span>
+<span id="cb1-9"><a href=""></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"script must be run in project root folder"</span>)</span>
+<span id="cb1-10"><a href=""></a>sys.path.append(<span class="st">"./src"</span>)</span>
+<span id="cb1-11"><a href=""></a></span>
+<span id="cb1-12"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-13"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-14"><a href=""></a><span class="im">import</span> pyhh</span>
+<span id="cb1-15"><a href=""></a></span>
+<span id="cb1-16"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
+<span id="cb1-17"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
+<span id="cb1-18"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
+<span id="cb1-19"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
+<span id="cb1-20"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
+<span id="cb1-21"><a href=""></a></span>
+<span id="cb1-22"><a href=""></a><span class="co"># customize a stimulus waveform</span></span>
+<span id="cb1-23"><a href=""></a>stim <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
+<span id="cb1-24"><a href=""></a>stim[<span class="dv">7000</span>:<span class="dv">13000</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># add a square pulse</span></span>
+<span id="cb1-25"><a href=""></a></span>
+<span id="cb1-26"><a href=""></a><span class="co"># simulate the model cell using the custom waveform</span></span>
+<span id="cb1-27"><a href=""></a>sim <span class="op">=</span> pyhh.Simulation(model)</span>
+<span id="cb1-28"><a href=""></a>sim.Run(stimulusWaveform<span class="op">=</span>stim, stepSizeMs<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb1-29"><a href=""></a></span>
+<span id="cb1-30"><a href=""></a><span class="co"># plot the results with MatPlotLib</span></span>
+<span id="cb1-31"><a href=""></a></span>
+<span id="cb1-32"><a href=""></a>ax1 <span class="op">=</span> plt.subplot(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb1-33"><a href=""></a>ax1.plot(sim.times, sim.Vm <span class="op">-</span> <span class="dv">70</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb1-34"><a href=""></a>ax1.set_ylabel(<span class="st">"Potential (mV)"</span>)</span>
+<span id="cb1-35"><a href=""></a>ax1.set_title(<span class="st">"Hodgkin-Huxley Spiking Neuron Model"</span>)</span>
+<span id="cb1-36"><a href=""></a></span>
+<span id="cb1-37"><a href=""></a>ax4 <span class="op">=</span> plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>, sharex<span class="op">=</span>ax1)</span>
+<span id="cb1-38"><a href=""></a>ax4.plot(sim.times, sim.INa, label<span class="op">=</span><span class="st">'VGSC'</span>)</span>
+<span id="cb1-39"><a href=""></a>ax4.plot(sim.times, sim.IK, label<span class="op">=</span><span class="st">'VGKC'</span>)</span>
+<span id="cb1-40"><a href=""></a>ax4.plot(sim.times, sim.IKleak, label<span class="op">=</span><span class="st">'KLeak'</span>)</span>
+<span id="cb1-41"><a href=""></a>ax4.set_ylabel(<span class="st">"Current (µA/cm²)"</span>)</span>
+<span id="cb1-42"><a href=""></a>ax4.set_xlabel(<span class="st">"Simulation Time (milliseconds)"</span>)</span>
+<span id="cb1-43"><a href=""></a>ax4.legend()</span>
+<span id="cb1-44"><a href=""></a></span>
+<span id="cb1-45"><a href=""></a>plt.tight_layout()</span>
+<span id="cb1-46"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-16" class="slide level2" data-fullscreen="true" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<div id="9c044a36" class="cell columns column-output-location" data-execution_count="1">
+<div class="column">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> sys</span>
+<span id="cb2-2" class="hljs-ln-code"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb2-3" class="hljs-ln-code"><a href=""></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">"./src/pyhh/__init__.py"</span>):</span>
+<span id="cb2-4" class="hljs-ln-code"><a href=""></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"script must be run in project root folder"</span>)</span>
+<span id="cb2-5" class="hljs-ln-code"><a href=""></a>sys.path.append(<span class="st">"./src"</span>)</span>
+<span id="cb2-6" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-7" class="hljs-ln-code"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-8" class="hljs-ln-code"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-9" class="hljs-ln-code"><a href=""></a><span class="im">import</span> pyhh</span>
+<span id="cb2-10" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-11" class="hljs-ln-code"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
+<span id="cb2-12" class="hljs-ln-code"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
+<span id="cb2-13" class="hljs-ln-code"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
+<span id="cb2-14" class="hljs-ln-code"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
+<span id="cb2-15" class="hljs-ln-code"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
+<span id="cb2-16" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-17" class="hljs-ln-code"><a href=""></a><span class="co"># customize a stimulus waveform</span></span>
+<span id="cb2-18" class="hljs-ln-code"><a href=""></a>stim <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
+<span id="cb2-19" class="hljs-ln-code"><a href=""></a>stim[<span class="dv">7000</span>:<span class="dv">13000</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># add a square pulse</span></span>
+<span id="cb2-20" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-21" class="hljs-ln-code"><a href=""></a><span class="co"># simulate the model cell using the custom waveform</span></span>
+<span id="cb2-22" class="hljs-ln-code"><a href=""></a>sim <span class="op">=</span> pyhh.Simulation(model)</span>
+<span id="cb2-23" class="hljs-ln-code"><a href=""></a>sim.Run(stimulusWaveform<span class="op">=</span>stim, stepSizeMs<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb2-24" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-25" class="hljs-ln-code"><a href=""></a><span class="co"># plot the results with MatPlotLib</span></span>
+<span id="cb2-26" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-27" class="hljs-ln-code"><a href=""></a>ax1 <span class="op">=</span> plt.subplot(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb2-28" class="hljs-ln-code"><a href=""></a>ax1.plot(sim.times, sim.Vm <span class="op">-</span> <span class="dv">70</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb2-29" class="hljs-ln-code"><a href=""></a>ax1.set_ylabel(<span class="st">"Potential (mV)"</span>)</span>
+<span id="cb2-30" class="hljs-ln-code"><a href=""></a>ax1.set_title(<span class="st">"Hodgkin-Huxley Spiking Neuron Model"</span>)</span>
+<span id="cb2-31" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-32" class="hljs-ln-code"><a href=""></a>ax4 <span class="op">=</span> plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>, sharex<span class="op">=</span>ax1)</span>
+<span id="cb2-33" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.INa, label<span class="op">=</span><span class="st">'VGSC'</span>)</span>
+<span id="cb2-34" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.IK, label<span class="op">=</span><span class="st">'VGKC'</span>)</span>
+<span id="cb2-35" class="hljs-ln-code"><a href=""></a>ax4.plot(sim.times, sim.IKleak, label<span class="op">=</span><span class="st">'KLeak'</span>)</span>
+<span id="cb2-36" class="hljs-ln-code"><a href=""></a>ax4.set_ylabel(<span class="st">"Current (µA/cm²)"</span>)</span>
+<span id="cb2-37" class="hljs-ln-code"><a href=""></a>ax4.set_xlabel(<span class="st">"Simulation Time (milliseconds)"</span>)</span>
+<span id="cb2-38" class="hljs-ln-code"><a href=""></a>ax4.legend()</span>
+<span id="cb2-39" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb2-40" class="hljs-ln-code"><a href=""></a>plt.tight_layout()</span>
+<span id="cb2-41" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>simulating 20000 time points...
+simulation complete</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="CPBS7712_CompNeuro_1_files/figure-revealjs/cell-2-output-2.png" width="950" height="258"></p>
 </figure>
 </div>
 </div>
+</div></div>
+</section>
+<section id="section-17" class="slide level2" data-fullscreen="false">
+<h2></h2>
+<div id="9635be80" class="cell columns column-output-location" data-execution_count="2">
+<div class="column">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> sys</span>
+<span id="cb4-2"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb4-3"><a href=""></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">"./src/pyhh/__init__.py"</span>):</span>
+<span id="cb4-4"><a href=""></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"script must be run in project root folder"</span>)</span>
+<span id="cb4-5"><a href=""></a>sys.path.append(<span class="st">"./src"</span>)</span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-8"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-9"><a href=""></a><span class="im">import</span> pyhh</span>
+<span id="cb4-10"><a href=""></a></span>
+<span id="cb4-11"><a href=""></a><span class="co"># customize a neuron model if desired</span></span>
+<span id="cb4-12"><a href=""></a>model <span class="op">=</span> pyhh.HHModel()</span>
+<span id="cb4-13"><a href=""></a>model.gNa <span class="op">=</span> <span class="dv">100</span>  <span class="co"># typically 120</span></span>
+<span id="cb4-14"><a href=""></a>model.gK <span class="op">=</span> <span class="dv">5</span>  <span class="co"># typically 36</span></span>
+<span id="cb4-15"><a href=""></a>model.EK <span class="op">=</span> <span class="op">-</span><span class="dv">35</span>  <span class="co"># typically -12</span></span>
+<span id="cb4-16"><a href=""></a></span>
+<span id="cb4-17"><a href=""></a><span class="co"># customize a stimulus waveform</span></span>
+<span id="cb4-18"><a href=""></a>stim <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
+<span id="cb4-19"><a href=""></a>stim[<span class="dv">7000</span>:<span class="dv">13000</span>] <span class="op">=</span> <span class="dv">50</span>  <span class="co"># add a square pulse</span></span>
+<span id="cb4-20"><a href=""></a></span>
+<span id="cb4-21"><a href=""></a><span class="co"># simulate the model cell using the custom waveform</span></span>
+<span id="cb4-22"><a href=""></a>sim <span class="op">=</span> pyhh.Simulation(model)</span>
+<span id="cb4-23"><a href=""></a>sim.Run(stimulusWaveform<span class="op">=</span>stim, stepSizeMs<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb4-24"><a href=""></a></span>
+<span id="cb4-25"><a href=""></a><span class="co"># plot the results with MatPlotLib</span></span>
+<span id="cb4-26"><a href=""></a></span>
+<span id="cb4-27"><a href=""></a>ax1 <span class="op">=</span> plt.subplot(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb4-28"><a href=""></a>ax1.plot(sim.times, sim.Vm <span class="op">-</span> <span class="dv">70</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb4-29"><a href=""></a>ax1.set_ylabel(<span class="st">"Potential (mV)"</span>)</span>
+<span id="cb4-30"><a href=""></a>ax1.set_title(<span class="st">"Hodgkin-Huxley Spiking Neuron Model"</span>)</span>
+<span id="cb4-31"><a href=""></a></span>
+<span id="cb4-32"><a href=""></a>ax2 <span class="op">=</span> plt.subplot(<span class="dv">412</span>)</span>
+<span id="cb4-33"><a href=""></a>ax2.plot(sim.times, stim, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb4-34"><a href=""></a>ax2.set_ylabel(<span class="st">"Stimulation (µA/cm²)"</span>)</span>
+<span id="cb4-35"><a href=""></a></span>
+<span id="cb4-36"><a href=""></a>ax3 <span class="op">=</span> plt.subplot(<span class="dv">413</span>, sharex<span class="op">=</span>ax1)</span>
+<span id="cb4-37"><a href=""></a>ax3.plot(sim.times, sim.StateH, label<span class="op">=</span><span class="st">'h'</span>)</span>
+<span id="cb4-38"><a href=""></a>ax3.plot(sim.times, sim.StateM, label<span class="op">=</span><span class="st">'m'</span>)</span>
+<span id="cb4-39"><a href=""></a>ax3.plot(sim.times, sim.StateN, label<span class="op">=</span><span class="st">'n'</span>)</span>
+<span id="cb4-40"><a href=""></a>ax3.set_ylabel(<span class="st">"Activation (frac)"</span>)</span>
+<span id="cb4-41"><a href=""></a>ax3.legend()</span>
+<span id="cb4-42"><a href=""></a></span>
+<span id="cb4-43"><a href=""></a><span class="co"># ax4 = plt.subplot(2,1,1, sharex=ax1)</span></span>
+<span id="cb4-44"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.INa, label='VGSC')</span></span>
+<span id="cb4-45"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.IK, label='VGKC')</span></span>
+<span id="cb4-46"><a href=""></a><span class="co"># ax4.plot(sim.times, sim.IKleak, label='KLeak')</span></span>
+<span id="cb4-47"><a href=""></a><span class="co"># ax4.set_ylabel("Current (µA/cm²)")</span></span>
+<span id="cb4-48"><a href=""></a><span class="co"># ax4.set_xlabel("Simulation Time (milliseconds)")</span></span>
+<span id="cb4-49"><a href=""></a><span class="co"># ax4.legend()</span></span>
+<span id="cb4-50"><a href=""></a></span>
+<span id="cb4-51"><a href=""></a>plt.tight_layout()</span>
+<span id="cb4-52"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>simulating 20000 time points...
+simulation complete</code></pre>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="CPBS7712_CompNeuro_1_files/figure-revealjs/cell-3-output-2.png" width="946" height="273"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-18" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="voltage-action-potentials-2">Voltage : Action potentials</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 200px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 225px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
+<p>testing Hodgkin-Huxley predictions for ioinc conductances <img data-src="./media/hh_conds.png" class="absolute" style="top: 250px; left: 30px; width: 900px; "></p>
+<div class="footer">
+<p>MIT Introduction to Neural Computation, Michael Fee</p>
+</div>
+</section>
+<section id="section-19" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="neurons-synaptic-transmission">Neurons : Synaptic transmission</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/synapses-synaptic.gif" class="absolute" style="left: 50px; width: 900px; "></p>
+</section>
+<section id="section-20" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="neurons-synaptic-connectivity">Neurons : Synaptic connectivity</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "></p>
+<div class="column" style="width:60%;">
+<p>Ramon y Cajal <img data-src="./media/ramonycajal1.jpg" class="absolute" style="width: 250px; "> <img data-src="./media/ramonycajal2.jpeg" class="absolute" style="left: 270px; width: 250px; "></p>
+</div><div class="column" style="width:40%;">
+<p>How do we measure connectivity? …voltage!</p>
+</div></section>
+<section id="section-21" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">_</h2>
+<h3 id="neurons-synaptic-connectivity-1">Neurons : Synaptic connectivity</h3>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 450px; width: 250px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 325px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 250px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/multipatch_rig.png" class="absolute" style="top: 150px; left: -150px; width: 800px; "> <img data-src="./media/multipatch_conn.png" class="absolute" style="top: 0px; left: 770px; "></p>
+<div class="footer">
+<p>DOI: 10.1126/science.abj5861</p>
+</div>
+<!-- ## {fullscreen=false}
+
+#| echo: true
+#| output-location: column
+
+import numpy as np
+from aisynphys.database import SynphysDatabase
+from aisynphys.cell_class import CellClass, classify_cells, classify_pairs
+from aisynphys.connectivity import measure_connectivity, pair_was_probed
+import matplotlib.colors, matplotlib.cm
+import matplotlib.pyplot as plt
+from aisynphys.ui.notebook import show_connectivity_matrix
+
+db = SynphysDatabase.load_current('small')
+mouse_pairs = db.pair_query(project_name=["mouse V1 coarse matrix", "mouse V1 pre-production"]).all()
+
+cell_class_criteria = {
+    'l23pyr': {'dendrite_type': 'spiny',       'cortical_layer': '2/3'},
+    'l23pv':  {'cre_type': 'pvalb',            'cortical_layer': '2/3'},
+    'l23sst': {'cre_type': 'sst',              'cortical_layer': '2/3'},
+    'l23vip': {'cre_type': 'vip',              'cortical_layer': '2/3'},
+    'l4pyr':  {'cre_type': ('nr5a1', 'rorb'),  'cortical_layer': '4'},
+    'l4pv':   {'cre_type': 'pvalb',            'cortical_layer': '4'},
+    'l4sst':  {'cre_type': 'sst',              'cortical_layer': '4'},
+    'l4vip':  {'cre_type': 'vip',              'cortical_layer': '4'},
+    'l5et':   {'cre_type': ('sim1', 'fam84b'), 'cortical_layer': '5'},
+    'l5it':   {'cre_type': 'tlx3',             'cortical_layer': '5'}, 
+    'l5pv':   {'cre_type': 'pvalb',            'cortical_layer': '5'},
+    'l5sst':  {'cre_type': 'sst',              'cortical_layer': '5'},
+    'l5vip':  {'cre_type': 'vip',              'cortical_layer': '5'},
+    'l6pyr':  {'cre_type': 'ntsr1',            'cortical_layer': ('6a','6b')},
+    'l6pv':   {'cre_type': 'pvalb',            'cortical_layer': ('6a','6b')},
+    'l6sst':  {'cre_type': 'sst',              'cortical_layer': ('6a','6b')},
+    'l6vip':  {'cre_type': 'vip',              'cortical_layer': ('6a','6b')},
+}
+cell_classes = {name:CellClass(name=name, **criteria) for name,criteria in cell_class_criteria.items()}
+
+# Group all cells by selected classes
+cell_groups = classify_cells(cell_classes.values(), pairs=mouse_pairs)
+
+# Group pairs into (pre_class, post_class) groups
+pair_groups = classify_pairs(mouse_pairs, cell_groups)
+
+# analyze matrix elements
+results = measure_connectivity(pair_groups, sigma=100e-6, dist_measure='lateral_distance')
+
+# define a colormap and log normalization used to color the heatmap
+norm = matplotlib.colors.LogNorm(vmin=0.01, vmax=1.0, clip=True)
+cmap = matplotlib.cm.get_cmap('plasma')
+
+# define the display labels to use for each cell subclass:
+class_labels = {
+    'l23pyr': 'L2/3 Pyr\nspiny',
+    'l23pv':  'L2/3 Pv',
+    'l23sst': 'L2/3 Sst',
+    'l23vip': 'L2/3 Vip',
+    'l4pyr':  'L4 Pyr\n nr5a1',
+    'l4pv':   'L4 Pv',
+    'l4sst':  'L4 Sst',
+    'l4vip':  'L4 Vip',
+    'l5et':   'L5 Pyr ET\nsim1, fam84b',
+    'l5it':   'L5 Pyr IT\ntlx3',
+    'l5pv':   'L5 Pv',
+    'l5sst':  'L5 Sst',
+    'l5vip':  'L5 Vip',
+    'l6pyr':  'L6 Pyr\nntsr1',
+    'l6pv':   'L6 Pv',
+    'l6sst':  'L6 Sst',
+    'l6vip':  'L6 Vip',
+}
+
+# create a figure/axes to draw on
+fig, ax = plt.subplots(figsize=(15, 15))
+
+# finally, draw the colormap using the provided function:
+# im, cbar, labels = show_connectivity_matrix(
+#     ax=ax, 
+#     results=results, 
+#     pre_cell_classes=cell_classes.values(), 
+#     post_cell_classes=cell_classes.values(), 
+#     class_labels=class_labels, 
+#     cmap=cmap, 
+#     norm=norm,
+#     distance_adjusted=True
+# )
+``` -->
+</section>
+<section id="connectivity" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Connectivity</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 530px; width: 200px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 375px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 250px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/conn_matrix.png" class="center" width="1000"></p>
+<div class="footer">
+<p>https://doi.org/10.1101/292961</p>
+</div>
+</section>
+<section id="connectivity-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Connectivity</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 530px; width: 200px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 375px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 250px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/conn_graph.png" class="center" width="700"></p>
+<div class="footer">
+<p>https://doi.org/10.1101/292961</p>
+</div>
+</section>
+<section id="connectivity-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Connectivity</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 530px; width: 200px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 375px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 250px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 125px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 825px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 950px; width: 100px; "><br>
+<img data-src="./media/conn_heirarchy.png" class="center" width="700"></p>
+<div class="footer">
+<p>https://doi.org/10.1101/292961</p>
+</div>
+</section>
+<section id="behavior" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Behavior</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 550px; width: 100px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 425px; width: 100px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 300px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 200px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 625px; width: 200px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 825px; width: 200px; "></p>
+<ul>
+<li>modeling muscles: Mazen al Borno, CPBS 7712, March 11th</li>
+<li>analyzing movements: CPBS 7712, March 6th</li>
+</ul>
 </section></section>
 <section>
-<section id="fourier-domain" class="title-slide slide level1 center">
-<h1>Fourier domain</h1>
-<p>Analysis</p>
+<section id="time-domain" class="title-slide slide level1 center" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h1 data-id="quarto-animate-title">Time domain</h1>
+<p>Analyses <img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 550px; width: 125px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 325px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 200px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 120px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 825px; width: 100px; "></p>
 </section>
-<section id="fourier" class="slide level2">
-<h2>Fourier</h2>
+<section id="time-domain-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Time domain</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 980px; left: 550px; width: 125px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 980px; left: 325px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 980px; left: 200px; width: 100px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 980px; left: 120px; width: 100px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 980px; left: 0px; width: 100px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 980px; left: 700px; width: 100px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 980px; left: 825px; width: 100px; "></p>
+<p>compare heirarchy from harris to jia/siegle</p>
+</section></section>
+<section>
+<section id="fourier-domain" class="title-slide slide level1 center" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h1 data-id="quarto-animate-title">Fourier domain</h1>
+<p>Analyses</p>
+</section>
+<section id="fourier" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Fourier</h2>
+<p><img data-src="./media/lfp_electrode.png" class="center" width="800"> <img data-src="./media/steriade.jpg" class="absolute" style="top: 600px; width: 800px; "></p>
+<div class="footer">
+<p>steriade, 1995</p>
+</div>
+</section>
+<section id="fourier-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Fourier</h2>
+
+<img data-src="./media/Fourier_dude.jpg" class="center r-stretch" width="800"></section>
+<section id="fourier-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Fourier</h2>
+<p><img data-src="./media/fourier.png" class="absolute" style="top: 100px; width: 800px; "> <img data-src="./media/fourier2.jpg" class="absolute" style="top: 260px; width: 800px; "> <img data-src="./media/fourier.gif" class="absolute" style="top: 800px; width: 800px; "></p>
+</section>
+<section id="section-22" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">-</h2>
+<p><img data-src="./media/Brodmann_areas_3D_.png" class="absolute" style="top: 600px; left: 525px; width: 300px; "> <img data-src="./media/minnie_w_back_V3.png" class="absolute" style="top: 690px; left: 310px; width: 200px; "> <img data-src="./media/purple_martinotti_7_.png" class="absolute" style="top: 450px; left: 50px; width: 300px; "> <img data-src="./media/synapse.png" class="absolute" style="top: 400px; left: 20px; width: 200px; "> <img data-src="./media/kv31.png" class="absolute" style="top: 300px; left: -150px; width: 200px; "> <img data-src="./media/arm_muscles.png" class="absolute" style="top: 520px; left: 750px; width: 200px; "> <img data-src="./media/triMouseDLC.gif" class="absolute" style="top: 300px; left: 900px; width: 200px; "></p>
+<div>
 <ul>
-<li>history</li>
+<li class="fragment">Neurons + Neural Systems
+<ul>
+<li class="fragment">what are we computing about?</li>
+</ul></li>
+<li class="fragment">Time Domain Methods</li>
+<li class="fragment">Frequency Domain Methods</li>
 </ul>
+</div>
+<div class="footer">
+<p>SUMMARY</p>
+</div>
 
 </section></section>
     </div>
@@ -250,6 +719,7 @@ Figure&nbsp;1: A line plot on a polar axis
   <script src="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="CPBS7712_CompNeuro_1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -271,7 +741,8 @@ Figure&nbsp;1: A line plot on a polar axis
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -419,7 +890,7 @@ Figure&nbsp;1: A line plot on a polar axis
         // specified using percentage units.
         width: 1050,
 
-        height: 700,
+        height: 1200,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
@@ -442,7 +913,7 @@ Figure&nbsp;1: A line plot on a polar axis
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,

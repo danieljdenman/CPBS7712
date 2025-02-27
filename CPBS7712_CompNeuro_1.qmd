@@ -6,6 +6,8 @@ format: revealjs
 auto-animate: true
 theme: default
 jupyter: python3
+chalkboard: true
+height: 1200
 ---
 
 # {auto-animate=true}
@@ -46,7 +48,7 @@ neuromatch.io
 ![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
 ![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
 ![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
-![](./media/synapse.png){.absolute width=300 left=20 top=0} 
+![](./media/synapse.png){.absolute width=300 left=20 top=100} 
 
 ##  {auto-animate=true}
 ![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
@@ -60,7 +62,7 @@ neuromatch.io
 ![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
 ![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
 ![](./media/synapse.png){.absolute width=200 left=20 top=100} 
-![](./media/kv31.png){.absolute width=200 top=0 left=-50}
+![](./media/kv31.png){.absolute width=200 top=0 left=-150}
 ![](./media/arm_muscles.png){.absolute width=400 top=120 left=650} 
 
 ##  {auto-animate=true}
@@ -68,16 +70,16 @@ neuromatch.io
 ![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
 ![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
 ![](./media/synapse.png){.absolute width=200 left=20 top=100} 
-![](./media/kv31.png){.absolute width=200 top=0 left=-50}
+![](./media/kv31.png){.absolute width=200 top=0 left=-150}
 ![](./media/arm_muscles.png){.absolute width=200 top=220 left=750} 
-![](./media/triMouseDLC.gif){.absolute width=350 top=0 left=700} 
+![](./media/triMouseDLC.gif){.absolute width=350 top=0 left=900} 
 
 ##  {auto-animate=true}
 ![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=300 width=300}
 ![](./media/minnie_w_back_V3.png){.absolute left=310 top=390 width=200}
 ![](./media/purple_martinotti_7_.png){.absolute width=300 top=150 left=50}
 ![](./media/synapse.png){.absolute width=200 left=20 top=100} 
-![](./media/kv31.png){.absolute width=200 top=0 left=-50}
+![](./media/kv31.png){.absolute width=200 top=0 left=-150}
 ![](./media/arm_muscles.png){.absolute width=200 top=220 left=750} 
 ![](./media/triMouseDLC.gif){.absolute width=200 left=900} 
 
@@ -86,31 +88,31 @@ images modified from microns-explorer.org; Gilmer et al., 2024, deeplabcut.githu
 :::
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=500 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=375 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute width=100 top=0 left=250}
-![](./media/synapse.png){.absolute width=100 left=125 top=0} 
-![](./media/kv31.png){.absolute width=100 top=0 left=0}
-![](./media/arm_muscles.png){.absolute width=100 top=0 left=625} 
-![](./media/triMouseDLC.gif){.absolute width=100 top=0 left=750} 
+![](./media/Brodmann_areas_3D_.png){.absolute left=500 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute width=100 top=980 left=625} 
+![](./media/triMouseDLC.gif){.absolute width=100 top=980 left=750} 
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=475 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=350 top=0 width=100}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=725 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=850 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=475 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=350 top=980 width=100}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=725 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=850 top=980 width=100}  
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=475 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=350 top=0 width=100}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=725 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=850 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=475 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=350 top=980 width=100}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=725 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=850 top=980 width=100}  
 ![](./media/cellmembranecircuit.jpg){.absolute left=200 top=400 width=600}  
 
 ### Voltage 
@@ -118,13 +120,13 @@ images modified from microns-explorer.org; Gilmer et al., 2024, deeplabcut.githu
 Membrane proteins (and lipid properties) give neurons some features of electronic circuits. 
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=475 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=350 top=0 width=100}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=725 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=850 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=600 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=475 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=350 top=980 width=100}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=725 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=850 top=980 width=100}  
 ![](./media/cellmembranecircuit.jpg){.absolute left=500 top=50 width=300}  
 
 
@@ -141,13 +143,13 @@ Jumper et al 2021 DOI: 10.1038/s41586-021-03819-2
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Voltage : Action potentials
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=550 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=300 top=0 width=200}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=550 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=300 top=980 width=200}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
 
 Hodgkin-Huxley experiments
 ![](./media/hh_exp.jpg){.absolute left=230 top=250 width=600}  
@@ -159,13 +161,13 @@ Hodgkin and Huxley, 1953
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Voltage : Action potentials
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=550 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=300 top=0 width=200}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=550 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=300 top=980 width=200}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
 
 Hodgkin-Huxley equivalent circuit and equation
 ![](./media/hh_diagram.gif){.absolute left=230 top=250 width=600}  
@@ -176,10 +178,10 @@ Hodgkin and Huxley, 1953; wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model
 :::
 
 
-## {fullscreen=false}
-```{python}
+## {fullscreen=true}
+```{.python code-line-numbers="|16-20|27-28"}
 #| echo: true
-#| output-location: column
+#| output-location: column-fragment
 #| code-overflow: wrap
 #| code-fold: true
 
@@ -214,16 +216,55 @@ ax1.plot(sim.times, sim.Vm - 70, color='b')
 ax1.set_ylabel("Potential (mV)")
 ax1.set_title("Hodgkin-Huxley Spiking Neuron Model")
 
-# ax2 = plt.subplot(412)
-# ax2.plot(sim.times, stim, color='r')
-# ax2.set_ylabel("Stimulation (µA/cm²)")
+ax4 = plt.subplot(2,1,1, sharex=ax1)
+ax4.plot(sim.times, sim.INa, label='VGSC')
+ax4.plot(sim.times, sim.IK, label='VGKC')
+ax4.plot(sim.times, sim.IKleak, label='KLeak')
+ax4.set_ylabel("Current (µA/cm²)")
+ax4.set_xlabel("Simulation Time (milliseconds)")
+ax4.legend()
 
-# ax3 = plt.subplot(413, sharex=ax1)
-# ax3.plot(sim.times, sim.StateH, label='h')
-# ax3.plot(sim.times, sim.StateM, label='m')
-# ax3.plot(sim.times, sim.StateN, label='n')
-# ax3.set_ylabel("Activation (frac)")
-# ax3.legend()
+plt.tight_layout()
+plt.show()
+```
+
+## {fullscreen=true auto-animate=true auto-animate-easing="ease-in-out"}
+```{python}
+#| echo: true
+#| output-location: column-fragment
+#| code-overflow: wrap
+#| code-fold: true
+
+import sys
+import os
+if not os.path.exists("./src/pyhh/__init__.py"):
+    raise Exception("script must be run in project root folder")
+sys.path.append("./src")
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pyhh
+
+# customize a neuron model if desired
+model = pyhh.HHModel()
+model.gNa = 100  # typically 120
+model.gK = 5  # typically 36
+model.EK = -35  # typically -12
+
+# customize a stimulus waveform
+stim = np.zeros(20000)
+stim[7000:13000] = 50  # add a square pulse
+
+# simulate the model cell using the custom waveform
+sim = pyhh.Simulation(model)
+sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
+
+# plot the results with MatPlotLib
+
+ax1 = plt.subplot(1,1,1)
+ax1.plot(sim.times, sim.Vm - 70, color='b')
+ax1.set_ylabel("Potential (mV)")
+ax1.set_title("Hodgkin-Huxley Spiking Neuron Model")
 
 ax4 = plt.subplot(2,1,1, sharex=ax1)
 ax4.plot(sim.times, sim.INa, label='VGSC')
@@ -240,7 +281,9 @@ plt.show()
 ## {fullscreen=false}
 ```{python}
 #| echo: true
-#| output-location: column
+#| output-location: column-fragment
+#| code-overflow: wrap
+#| code-fold: true
 
 import sys
 import os
@@ -299,13 +342,13 @@ plt.show()
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Voltage : Action potentials
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=550 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=300 top=0 width=200}
-![](./media/synapse.png){.absolute left=225 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=200}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=550 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=300 top=980 width=200}
+![](./media/synapse.png){.absolute left=225 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=200}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
 
 testing Hodgkin-Huxley predictions for ioinc conductances
 ![](./media/hh_conds.png){.absolute left=30 top=250 width=900}  
@@ -317,24 +360,24 @@ MIT Introduction to Neural Computation, Michael Fee
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Neurons : Synaptic transmission
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=450 top=0 width=250}
-![](./media/purple_martinotti_7_.png){.absolute left=325 top=0 width=100}
-![](./media/synapse.png){.absolute left=125 top=0 width=250} 
-![](./media/kv31.png){.absolute left=0 top=0 width=100}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=980 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=980 width=100}
+![](./media/synapse.png){.absolute left=125 top=980 width=250} 
+![](./media/kv31.png){.absolute left=0 top=980 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
 ![](./media/synapses-synaptic.gif){.absolute width=900 left=50}
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Neurons : Synaptic connectivity
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=450 top=0 width=250}
-![](./media/purple_martinotti_7_.png){.absolute left=325 top=0 width=100}
-![](./media/synapse.png){.absolute left=125 top=0 width=250} 
-![](./media/kv31.png){.absolute left=0 top=0 width=100}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=980 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=980 width=100}
+![](./media/synapse.png){.absolute left=125 top=980 width=250} 
+![](./media/kv31.png){.absolute left=0 top=980 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
 
 ::: {.column width="60%"}
 Ramon y Cajal
@@ -349,21 +392,21 @@ How do we measure connectivity?
 
 ## _ {auto-animate=true auto-animate-easing="ease-in-out"}
 ### Neurons : Synaptic connectivity
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=450 top=0 width=250}
-![](./media/purple_martinotti_7_.png){.absolute left=325 top=0 width=100}
-![](./media/synapse.png){.absolute left=125 top=0 width=250} 
-![](./media/kv31.png){.absolute left=0 top=0 width=100}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
-![](./media/multipatch_rig.png){.absolute top=150 width=800}
-![](./media/multipatch_conn.png){.absolute left=570 top=300}
+![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=450 top=980 width=250}
+![](./media/purple_martinotti_7_.png){.absolute left=325 top=980 width=100}
+![](./media/synapse.png){.absolute left=125 top=980 width=250} 
+![](./media/kv31.png){.absolute left=0 top=980 width=100}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
+![](./media/multipatch_rig.png){.absolute left=-150 top=150 width=800}
+![](./media/multipatch_conn.png){.absolute left=770 top=0}
 
 ::: footer
 DOI: 10.1126/science.abj5861
 :::
 
-## {fullscreen=false}
+<!-- ## {fullscreen=false}
 ```{python}
 #| echo: true
 #| output-location: column
@@ -448,84 +491,119 @@ fig, ax = plt.subplots(figsize=(15, 15))
 #     norm=norm,
 #     distance_adjusted=True
 # )
-```
+``` -->
+
+
 
 ## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=700 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=450 top=0 width=250}
-![](./media/purple_martinotti_7_.png){.absolute left=325 top=0 width=100}
-![](./media/synapse.png){.absolute left=125 top=0 width=250} 
-![](./media/kv31.png){.absolute left=0 top=0 width=100}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=980 width=200}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
+![](./media/conn_matrix.png){.center width=1000}
 
-:::: {.columns}
-
-::: {.column width="40%"}
-code for heirarchy from connectivity
+::: footer
+https://doi.org/10.1101/292961
 :::
 
-::: {.column width="60%"}
-results of heirarchy
+## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=980 width=200}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
+![](./media/conn_graph.png){.center width=700}
+
+::: footer
+https://doi.org/10.1101/292961
 :::
 
-::::
-
 ## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=0 width=200}
-![](./media/minnie_w_back_V3.png){.absolute left=375 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute width=100 top=0 left=250}
-![](./media/synapse.png){.absolute width=100 left=125 top=0} 
-![](./media/kv31.png){.absolute width=100 top=0 left=0}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
-![](./media/conn_heirarchy.png){.absolute left=570 top=300}
+![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=980 width=200}
+![](./media/minnie_w_back_V3.png){.absolute left=375 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=250}
+![](./media/synapse.png){.absolute width=100 left=125 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=825 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=950 top=980 width=100}  
+![](./media/conn_heirarchy.png){.center width=700}
 
-## Connectivity  {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=530 top=0 width=200}
-![](./media/minnie_w_back_V3.png){.absolute left=375 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute width=100 top=0 left=250}
-![](./media/synapse.png){.absolute width=100 left=125 top=0} 
-![](./media/kv31.png){.absolute width=100 top=0 left=0}
-![](./media/arm_muscles.png){.absolute left=825 top=0 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=0 width=100}  
-![](./media/conn_graph.png){.absolute left=570 top=300}
+::: footer
+https://doi.org/10.1101/292961
+:::
 
 ## Behavior {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=0 width=100}
-![](./media/minnie_w_back_V3.png){.absolute left=425 top=0 width=100}
-![](./media/purple_martinotti_7_.png){.absolute left=300 top=0 width=100}
-![](./media/synapse.png){.absolute left=200 top=0 width=100} 
-![](./media/kv31.png){.absolute left=0 top=0 width=100}
-![](./media/arm_muscles.png){.absolute left=625 top=0 width=200} 
-![](./media/triMouseDLC.gif){.absolute left=825 top=0 width=200}  
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=100}
+![](./media/minnie_w_back_V3.png){.absolute left=425 top=980 width=100}
+![](./media/purple_martinotti_7_.png){.absolute left=300 top=980 width=100}
+![](./media/synapse.png){.absolute left=200 top=980 width=100} 
+![](./media/kv31.png){.absolute left=0 top=980 width=100}
+![](./media/arm_muscles.png){.absolute left=625 top=980 width=200} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=200}  
 
 - modeling muscles: Mazen al Borno, CPBS 7712, March 11th
 - analyzing movements: CPBS 7712, March 6th
 
-# Time domain
+# Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
+Analyses
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=125}
+![](./media/minnie_w_back_V3.png){.absolute left=325 top=980 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=200}
+![](./media/synapse.png){.absolute width=100 left=120 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
+
+## Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Brodmann_areas_3D_.png){.absolute left=550 top=980 width=125}
+![](./media/minnie_w_back_V3.png){.absolute left=325 top=980 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=100 top=980 left=200}
+![](./media/synapse.png){.absolute width=100 left=120 top=980} 
+![](./media/kv31.png){.absolute width=100 top=980 left=0}
+![](./media/arm_muscles.png){.absolute left=700 top=980 width=100} 
+![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=100} 
+
+compare heirarchy from harris to jia/siegle
+
+# Fourier domain {auto-animate=true auto-animate-easing="ease-in-out"}
 Analyses
 
-![](./media/Brodmann_areas_3D_.png){.absolute left=580 top=200 width=125}
-![](./media/minnie_w_back_V3.png){.absolute left=350 top=200 width=200}
-![](./media/purple_martinotti_7_.png){.absolute width=100 top=200 left=175}
-![](./media/synapse.png){.absolute width=100 left=50 top=200} 
-![](./media/kv31.png){.absolute width=100 top=200 left=0}
-![](./media/arm_muscles.png){.absolute left=825 top=200 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=200 width=100} 
+## Fourier {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/lfp_electrode.png){.center width=800} 
+![](./media/steriade.jpg){.absolute top=600 width=800} 
 
-## Dynamics {auto-animate=true auto-animate-easing="ease-in-out"}
-![](./media/Brodmann_areas_3D_.png){.absolute left=580 top=00 width=125}
-![](./media/minnie_w_back_V3.png){.absolute left=350 top=00 width=200}
-![](./media/purple_martinotti_7_.png){.absolute width=100 top=00 left=175}
-![](./media/synapse.png){.absolute width=100 left=50 top=00} 
-![](./media/kv31.png){.absolute width=100 top=0 left=0}
-![](./media/arm_muscles.png){.absolute left=825 top=00 width=100} 
-![](./media/triMouseDLC.gif){.absolute left=950 top=00 width=100}  
--population methods: 2photon, ephys
+::: footer
+steriade, 1995
+:::
 
-# Fourier domain
-Analysis
+## Fourier {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/Fourier_dude.jpg){.center width=800} 
 
-## Fourier
-- history
+## Fourier {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/fourier.png){.absolute top=100 width=800} 
+![](./media/fourier2.jpg){.absolute top=260 width=800} 
+![](./media/fourier.gif){.absolute top=800 width=800} 
+
+##  - {auto-animate=true}
+![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=600 width=300}
+![](./media/minnie_w_back_V3.png){.absolute left=310 top=690 width=200}
+![](./media/purple_martinotti_7_.png){.absolute width=300 top=450 left=50}
+![](./media/synapse.png){.absolute width=200 left=20 top=400} 
+![](./media/kv31.png){.absolute width=200 top=300 left=-150}
+![](./media/arm_muscles.png){.absolute width=200 top=520 left=750} 
+![](./media/triMouseDLC.gif){.absolute width=200 top=300 left=900} 
+
+:::{.incremental}
+- Neurons + Neural Systems
+  - what are we computing about?
+- Time Domain Methods
+- Frequency Domain Methods 
+:::
+::: footer
+SUMMARY
+:::
