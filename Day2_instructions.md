@@ -1,3 +1,7 @@
+## Day 2
+### Lectures based on Neuromatch Academy
+### Be sure to watch the embedded short youtube videos for each section!
+
 ### Notebook 1, Geometric view of mutlivariate data, driven by multineuron sampling
 Neural dynamics - the voltage changes in neurons that drive communication between neurons through synapses - can extend of large populations of interacting neurons. Understanding this neural population dynamics structure and how it relates to behavior is fundamental goal of neuroscience. This notebook explains the geometric approach to understanding neural populations. <br>
 https://colab.research.google.com/drive/1yUip6ZKTTL_PBrcceROI5nnGAbyctdHW?usp=sharing
