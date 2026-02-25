@@ -1,4 +1,4 @@
-## Day 2
+## Days 2/3
 ### Lectures based on Neuromatch Academy
 ### Be sure to watch the embedded short youtube videos for each section!
 
