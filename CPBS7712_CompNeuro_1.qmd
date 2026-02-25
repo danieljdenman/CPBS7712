@@ -1,7 +1,7 @@
 ---
 title: "Computational Neuroscience"
 subtitle: "Neural data - action potentials and voltage and using the time domain, fourier domain"
-author: "Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 27 2025"
+author: "Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 26 2026"
 format: revealjs
 auto-animate: true
 theme: default
