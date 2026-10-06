@@ -1,7 +1,7 @@
 ---
 title: "Computational Neuroscience"
 subtitle: "Neural data - action potentials and voltage and using the time domain, fourier domain"
-author: "Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Feb 26 2026"
+author: "Daniel Denman<br>CU Anschutz Comp Bio 7712<br>Oct 6 2026"
 format: revealjs
 auto-animate: true
 theme: default
@@ -512,8 +512,16 @@ https://doi.org/10.1101/292961
 ![](./media/arm_muscles.png){.absolute left=625 top=980 width=200} 
 ![](./media/triMouseDLC.gif){.absolute left=825 top=980 width=200}  
 
-- modeling muscles: Mazen al Borno, CPBS 7712, March 11th
-- analyzing movements: CPBS 7712, March 6th
+Modeling muscles: systems of differential equations
+
+::: {.fragment}
+![](./media/muscle_ode_skeletal_coupling.png){.absolute left=30 top=150 width=600}  
+:::
+
+::: {.fragment}
+![](./media/muscle_ode_skeletal_coupling_2.png){.absolute left=650 top=400 width=600}  
+:::
+
 
 # Time domain {auto-animate=true auto-animate-easing="ease-in-out"}
 Analyses
@@ -616,6 +624,9 @@ steriade, 1995
 ::: {.fragment}
 ![](./media/fourier.gif){.absolute top=800 width=800} 
 :::
+
+## Fourier {auto-animate=true auto-animate-easing="ease-in-out"}
+![](./media/eeg.png){.center width=800} 
 
 ##  summary {auto-animate=true}
 ![](./media/Brodmann_areas_3D_.png){.absolute left=525 top=600 width=300}
