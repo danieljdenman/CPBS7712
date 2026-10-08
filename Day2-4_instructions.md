@@ -23,6 +23,7 @@ Measurements of neural dynamics are necessarily limited, either to partial sampl
 https://colab.research.google.com/drive/1mE0D8y1Rc8wwrJeimKflwJcuoUuJyntY?usp=sharing
 continue with hidden dynamics tutorials:  https://compneuro.neuromatch.io/tutorials/W3D3_HiddenDynamics/student/W3D3_Tutorial3.html
 
+optional additional set if interested / done with the others during class time
 ### Day 4, causality in networks
 Causal questions are critical in all biology, and can be difficult to ask and prove in neuroscience. In these tutorials, learn how interventions and correlation are leveraged for arguments about causality in neuroscience
 https://compneuro.neuromatch.io/tutorials/W3D5_NetworkCausality/student/W3D5_Tutorial1.html
